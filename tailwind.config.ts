@@ -55,20 +55,7 @@ const config: Config = {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)'
-      },
-      fontSize: {
-        'xs': '0.75rem',   // 12px
-        'sm': '0.8125rem',  // 13px
-        'base': '0.875rem', // 14px
-        'lg': '0.9375rem',  // 15px
-        'xl': '1rem',       // 16px
-        '2xl': '1.0625rem', // 17px
-        '3xl': '1.25rem',   // 20px
-        '4xl': '1.5rem',    // 24px
-        '5xl': '1.625rem',  // 26px
-        '6xl': '1.875rem',  // 30px
-        '7xl': '3rem',      // 48px
-      },
+      }
     }
   },
   plugins: [require("tailwindcss-animate")],

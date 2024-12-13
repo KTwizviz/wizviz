@@ -1,4 +1,4 @@
-import SubBannerMenu from "@/components/common/sub-banner-menu/SubBannerMenu";
+import SubBannerMenu from "@/components/common/sub-banner-menu/SubMenuBanner";
 import {
   Breadcrumb,
   BreadcrumbItem,

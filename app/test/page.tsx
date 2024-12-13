@@ -1,4 +1,5 @@
 import SubBannerMenu from "@/components/common/sub-banner-menu/SubMenuBanner";
+import ContentsArea from "@/components/layout/contents-area";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -93,6 +94,10 @@ export default function page() {
       </Dialog>
       <Input type="email" placeholder="Email" />
       <SubBannerMenu />
+
+      <ContentsArea>
+        <div className="h-[1000px]">asdas</div>
+      </ContentsArea>
     </>
   );
 }

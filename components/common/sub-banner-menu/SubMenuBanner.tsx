@@ -1,7 +1,7 @@
 'use client';
 import { usePathname, useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
-import { MENU_INFO } from "./menu-data";
+import { MENU_INFO } from "../../../constant/menu-data";
 import submenuBg from '@/assets/images/submenu_bg.png';
 import Image from "next/image";
 
@@ -15,7 +15,7 @@ const SubBannerMenu = () => {
   const router = useRouter();
   const pathname: string = usePathname();
   const currentPath: string = pathname.split('/').pop() || ''; // 현재 메뉴 이름
-  const [subMenuList, setSubMenuList] = useState<object[]>([{}]) // 해당 메뉴의 하위 메뉴 리스트
+  const [subMenuList, setSubMenuList] = useState<SubMenu[]>([]) // 해당 메뉴의 하위 메뉴 리스트
   const [title, setTitle] = useState<string>("");
   const [descript, setDescript] = useState<string>("");
 

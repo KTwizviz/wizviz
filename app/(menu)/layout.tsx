@@ -1,3 +1,4 @@
+import SubBannerMenu from "@/components/common/sub-banner-menu/SubMenuBanner";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -12,7 +13,14 @@ export default function MenuLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <SubBannerMenu />
+        <div className="w-full flex justify-center">
+          <div className="w-[1100px] h-auto pt-10 pb-[100px]">
+            {children}
+          </div>
+        </div>
+      </body>
     </html>
   );
 }

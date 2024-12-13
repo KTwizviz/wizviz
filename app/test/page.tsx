@@ -1,5 +1,7 @@
 import SubBannerMenu from "@/components/common/sub-banner-menu/SubMenuBanner";
 import ContentsArea from "@/components/layout/contents-area";
+import wizPark from "@/assets/images/wiz_park.jpg";
+
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -32,6 +34,7 @@ import {
   DialogTrigger,
 } from "@radix-ui/react-dialog";
 import { Slash } from "lucide-react";
+import Image from "next/image";
 export default function page() {
   return (
     <>
@@ -93,11 +96,6 @@ export default function page() {
         </DialogContent>
       </Dialog>
       <Input type="email" placeholder="Email" />
-      <SubBannerMenu />
-
-      <ContentsArea>
-        <div className="h-[1000px]">asdas</div>
-      </ContentsArea>
     </>
   );
 }

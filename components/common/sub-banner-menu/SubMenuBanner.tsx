@@ -1,7 +1,7 @@
 'use client';
 import { usePathname, useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
-import { MENU_INFO } from "../../../constant/menu-data";
+import { MENU_INFO } from "../../../constants/menu-data";
 import submenuBg from '@/assets/images/submenu_bg.png';
 import Image from "next/image";
 

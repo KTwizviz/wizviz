@@ -16,7 +16,7 @@ const Header = () => {
           className={`transition-colors duration-200 text-SYSTEM-white ${
             isHovering
               ? "bg-SYSTEM-black text-SYSTEM-white border-b"
-              : "bg-black"
+              : "bg-SYSTEM-black"
           }`}
         >
           <div className="max-w-7xl mx-auto px-4">

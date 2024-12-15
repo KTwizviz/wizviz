@@ -8,5 +8,5 @@ type MenuItem =
   | "sponsor";
 
 type HeaderMenu = {
-  [K in MenuItem]: K extends "shop" | "sponsor" ? [] : string[];
+  [K in MenuItem]: string[];
 };

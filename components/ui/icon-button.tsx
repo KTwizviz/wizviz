@@ -1,40 +1,37 @@
-import { Button } from "@/components/ui/index";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
+import { twMerge } from "tailwind-merge";
 
-function IconButton({
-  icon,
-  variant = "outline",
+const IconButton = ({
+  iconImage,
+  border,
   circle,
   iconSize,
   text,
-}: {
-  icon: StaticImageData;
-  variant?:
-    | "outline"
-    | "default"
-    | "destructive"
-    | "secondary"
-    | "ghost"
-    | "link";
-  circle?: boolean;
-  iconSize?: number;
-  text?: string;
-}) {
-  // console.log("variant : ", variant);
+  onClick,
+  className,
+}: IconButtonProps) => {
   return (
-    <Button
-      size={text ? undefined : "icon"}
-      className={circle ? "rounded-full" : ""}
-      variant={circle ? "ghost" : "outline"}
-      // variant={variant}
+    <button
+      onClick={onClick}
+      className={twMerge(
+        "p-2.5 rounded-md",
+        circle && "rounded-full",
+        border && "border",
+        className
+      )}
     >
       <div className="flex justify-self-center items-center">
-        {/* <Image src={icon} alt="icon" height={iconSize ?? "17"} /> */}
-        <Image src={icon} alt="icon" height={circle ? undefined : "17"} />
+        <Image
+          src={iconImage}
+          width={iconSize}
+          height={iconSize}
+          alt="icon"
+          className="cursor-pointer"
+        />
         {text && <span className="w-full ml-2">{text}</span>}
       </div>
-    </Button>
+    </button>
   );
-}
+};
 
 export default IconButton;

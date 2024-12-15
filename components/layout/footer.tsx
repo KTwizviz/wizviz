@@ -7,8 +7,6 @@ import instagram from "@/assets/icons/icon_instagram.png";
 import facebook from "@/assets/icons/icon_facebook.png";
 import youtube from "@/assets/icons/icon_youtube.png";
 import naver from "@/assets/icons/icon_naver.png";
-import leftArrow from "@/assets/icons/icon_left_arrow.png";
-import rightArrow from "@/assets/icons/icon_right_arrow.png";
 import {
   Select,
   SelectContent,
@@ -16,11 +14,10 @@ import {
   SelectTrigger,
   SelectGroup,
   SelectItem,
-  Button,
 } from "@/components/ui/index";
-import IconButton from "../ui/icon-button";
 import FooterDialog from "../ui/footer-dialog";
 import { FOOTER_DIALOG } from "@/constants/dialog";
+import IconButton from "../ui/icon-button";
 
 type DialogKey = keyof typeof FOOTER_DIALOG;
 
@@ -33,6 +30,24 @@ const Footer = () => {
     setIsOpen(true);
     setSelectedDialog(FOOTER_DIALOG[key]);
   };
+
+  const SITE_URLS = {
+    "KT estate": "https://www.ktestate.com",
+    "KT telecop": "https://www.kttelecop.co.kr",
+    "KT sat": "https://www.ktsat.com",
+    "KT engineering": "https://www.ktengineering.co.kr",
+    instagram: "https://www.instagram.com/ktwiz.pr",
+    facebook: "https://www.facebook.com/ktwiz",
+    youtube: "https://www.youtube.com/c/ktwiztv",
+    naver: "https://tv.naver.com/ktwiz",
+  } as const;
+
+  const handleUrlOpen = (site: keyof typeof SITE_URLS) => {
+    if (SITE_URLS[site]) {
+      window.open(SITE_URLS[site], "_blank");
+    }
+  };
+
   return (
     <>
       <div className="py-[30px] justify-center border-t border-ELSE-DE">
@@ -44,49 +59,81 @@ const Footer = () => {
           {/* 중앙 텍스트들 */}
           <div className="justify-start space-y-3">
             <div className="flex justify-start gap-6 font-bold">
-              <Button variant="ghost" onClick={() => openDialog("CPIC")}>
-                <strong>개인정보 처리방침</strong>
-              </Button>
-              <Button variant="ghost" onClick={() => openDialog("TOU")}>
-                <strong>이용약관</strong>
-              </Button>
-              <Button variant="ghost" onClick={() => openDialog("PAEC")}>
-                <strong>이메일무단수집거부</strong>
-              </Button>
-              <p>Sitemap</p>
+              <a
+                href="#"
+                className="text-black hover:text-gray-600 cursor-pointer"
+                onClick={(e) => {
+                  e.preventDefault();
+                  openDialog("CPIC");
+                }}
+              >
+                개인정보 처리방침
+              </a>
+              <a
+                href="#"
+                className="text-black hover:text-gray-600 cursor-pointer"
+                onClick={(e) => {
+                  e.preventDefault();
+                  openDialog("TOU");
+                }}
+              >
+                이용약관
+              </a>
+              <a
+                href="#"
+                className="text-black hover:text-gray-600 cursor-pointer"
+                onClick={(e) => {
+                  e.preventDefault();
+                  openDialog("PAEC");
+                }}
+              >
+                이메일무단수집거부
+              </a>
             </div>
             <div>
-              <div className="grid grid-cols-[70px_auto] flex justify-start gap-1">
-                <p className="text-FOOTER-main">대표번호</p>
-                <strong>1899-5916</strong>
-                <p></p>
-                <p className="text-FOOTER-gray">
+              <dl className="grid gap-1">
+                <div className="flex">
+                  <dt className="text-FOOTER-main w-[70px]">대표번호</dt>
+                  <dd className="font-medium">1899-5916</dd>
+                </div>
+                <dd className="text-FOOTER-gray ml-[70px]">
                   (운영시간 : 평일 10:00 ~ 18:00, 주말 10:00 ~ 경기시작 전까지,
                   월요일 및 주말 미경기 시 미운영)
-                </p>
-                <p className="text-FOOTER-main mt-3">주소</p>
-                <strong className="mt-3">
-                  경기도 수원시 장안구 경수대로 (조원동) 수원 케이티 위즈파크
-                </strong>
-              </div>
+                </dd>
+                <div className="flex mt-3">
+                  <dt className="text-FOOTER-main w-[70px]">주소</dt>
+                  <dd className="font-medium">
+                    경기도 수원시 장안구 경수대로 (조원동) 수원 케이티 위즈파크
+                  </dd>
+                </div>
+              </dl>
             </div>
-            <div className="text-s text-[#272222]">
+            <div className="text-s text-[#9D9D9D]">
               Copyright 2022 kt sports. All rights reserved.
             </div>
           </div>
           {/* 우측 관련 사이트 */}
           <div className="space-y-10">
             <div>
-              <Select>
+              <Select onValueChange={handleUrlOpen}>
                 <SelectTrigger className="w-[210px] bg-SYSTEM-white">
                   <SelectValue placeholder="KT 그룹사 및 관련사이트" />
                 </SelectTrigger>
                 <SelectContent className="bg-SYSTEM-white">
                   <SelectGroup>
-                    <SelectItem value="KT estate">KT estate</SelectItem>
-                    <SelectItem value="KT telecop">KT telecop</SelectItem>
-                    <SelectItem value="KT sat">KT sat</SelectItem>
-                    <SelectItem value="KT engineering">
+                    <SelectItem value="KT estate" className="cursor-pointer">
+                      KT estate
+                    </SelectItem>
+                    <SelectItem value="KT telecop" className="cursor-pointer">
+                      KT telecop
+                    </SelectItem>
+                    <SelectItem value="KT sat" className="cursor-pointer">
+                      KT sat
+                    </SelectItem>
+                    <SelectItem
+                      value="KT engineering"
+                      className="cursor-pointer"
+                    >
                       KT engineering
                     </SelectItem>
                   </SelectGroup>
@@ -94,15 +141,30 @@ const Footer = () => {
               </Select>
             </div>
             <div className="flex gap-2">
-              <IconButton icon={instagram} />
-              <IconButton icon={facebook} />
-              <IconButton icon={youtube} />
-              <IconButton icon={naver} />
-            </div>
-            <div className="flex gap-2">
-              <IconButton icon={instagram} text="insta" />
-              <IconButton icon={leftArrow} circle />
-              <IconButton icon={rightArrow} circle />
+              <IconButton
+                icon={instagram}
+                iconSize={18}
+                border
+                onClick={() => handleUrlOpen("instagram")}
+              />
+              <IconButton
+                icon={facebook}
+                iconSize={18}
+                border
+                onClick={() => handleUrlOpen("facebook")}
+              />
+              <IconButton
+                icon={youtube}
+                iconSize={18}
+                border
+                onClick={() => handleUrlOpen("youtube")}
+              />
+              <IconButton
+                icon={naver}
+                iconSize={18}
+                border
+                onClick={() => handleUrlOpen("naver")}
+              />
             </div>
           </div>
         </div>
@@ -117,4 +179,5 @@ const Footer = () => {
     </>
   );
 };
+
 export default Footer;

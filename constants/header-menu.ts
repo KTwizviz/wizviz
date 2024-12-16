@@ -11,8 +11,8 @@ export const MenuData: HeaderMenu = {
     "하이라이트",
     "live 영상모음",
   ],
-  shop: ["shop 바로가기"],
-  sponsor: ["sponsor 바로가기"],
+  shop: ["바로가기"],
+  sponsor: ["바로가기"],
 };
 
 export const MainMenuItems = [

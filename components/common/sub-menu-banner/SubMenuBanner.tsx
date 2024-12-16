@@ -45,9 +45,7 @@ const SubBannerMenu = () => {
           <Image
             src={submenuBg}
             alt="Submenu background"
-            layout="fill"
-            objectFit="cover"
-            className="w-full absolute inset-0"
+            className="w-auto h-[100%] absolute inset-0 object-cover"
           />
           <div className="text-center text-white p-8 max-w-3xl relative z-10">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">{title}</h1>

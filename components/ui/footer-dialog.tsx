@@ -21,7 +21,7 @@ const FooterDialog = ({
 }) => {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[700px] max-h-[450px] bg-white">
+      <DialogContent className="sm:max-w-[700px] max-h-[450px] bg-SYSTEM-white">
         <DialogHeader>
           <div className="flex gap-2">
             <DialogTitle className="text-xl">{title}</DialogTitle>
@@ -30,7 +30,7 @@ const FooterDialog = ({
             </DialogDescription>
           </div>
         </DialogHeader>
-        <div className="bg-[#F3F3F3] rounded-sm py-7 px-5 text-[#6D6D6D] text-m whitespace-pre-wrap max-h-[350px] overflow-y-auto">
+        <div className="bg-ELSE-F6 rounded-sm py-7 px-5 text-ELSE-7374 text-m whitespace-pre-wrap max-h-[350px] overflow-y-auto">
           {content}
         </div>
       </DialogContent>

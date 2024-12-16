@@ -41,13 +41,12 @@ const SubBannerMenu = () => {
   return (
     <div className="w-full">
       <div className="relative">
-        <div className="w-full h-[253px] flex items-center justify-center bg-cover bg-center bg-blend-overlay">
+        <div className="relative w-full h-[253px] flex items-center justify-center bg-cover bg-center bg-blend-overlay">
           <Image
             src={submenuBg}
             alt="Submenu background"
-            layout="fill"
-            objectFit="cover"
-            className="w-full absolute inset-0"
+            fill
+            className="absolute inset-0 object-cover"
           />
           <div className="text-center text-white p-8 max-w-3xl relative z-10">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">{title}</h1>

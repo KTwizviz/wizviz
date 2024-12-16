@@ -15,7 +15,7 @@ const BreadcrumbSegment = ({ segment, href, isLast }: SegmentProps) => (
         <BreadcrumbLink href={href}>{segment}</BreadcrumbLink>
       )}
     </BreadcrumbItem>
-    <BreadcrumbSeparator />
+    {isLast && <BreadcrumbSeparator />}
   </>
 );
 

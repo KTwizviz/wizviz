@@ -1,4 +1,3 @@
-import BreadCrumb from "@/components/common/BreadCrumb";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -93,7 +92,6 @@ export default function page() {
       </Dialog>
       <Input type="email" placeholder="Email" />
       sds
-      <BreadCrumb />
     </>
   );
 }

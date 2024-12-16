@@ -1,6 +1,17 @@
+export const FOOTER_SITE_URLS = {
+  "KT estate": "https://www.ktestate.com",
+  "KT telecop": "https://www.kttelecop.co.kr",
+  "KT sat": "https://www.ktsat.com",
+  "KT engineering": "https://www.ktengineering.co.kr",
+  instagram: "https://www.instagram.com/ktwiz.pr",
+  facebook: "https://www.facebook.com/ktwiz",
+  youtube: "https://www.youtube.com/c/ktwiztv",
+  naver: "https://tv.naver.com/ktwiz",
+} as const;
+
 export const FOOTER_DIALOG = {
+  // Consent to Personal Information Collection
   CPIC: {
-    // Consent to Personal Information Collection
     title: "개인정보 수집 · 이용 동의",
     description: "kt wiz는 팬들의 개인정보를 소중히 다루고 있습니다.",
     content: `개인정보 수집 및 이용에 대한 안내
@@ -272,8 +283,8 @@ export const FOOTER_DIALOG = {
 
 - 이전 개인정보취급방침 (2021년 11월 30일)`,
   },
+  // Terms of Use
   TOU: {
-    // Terms of Use
     title: "이용약관",
     description: "kt wiz사이트 이용과 관련된 사항을 규정합니다.",
     content: `제1장 총칙
@@ -835,8 +846,8 @@ export const FOOTER_DIALOG = {
 부칙 (시행일)
 본 약관은 2024년 3월 12일부터 적용합니다.`,
   },
+  // Prohibition of Unauthorized Email Collection
   PAEC: {
-    // Prohibition of Unauthorized Email Collection
     title: "이메일 무단 수집거부",
     description: "kt wiz는 팬들의 개인정보를 소중히 다루고 있습니다.",
     content: `kt wiz는 이메일 무단 수집되는 것을 거부합니다.

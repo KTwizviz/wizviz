@@ -16,7 +16,7 @@ import {
   SelectItem,
 } from "@/components/ui/index";
 import FooterDialog from "../ui/footer-dialog";
-import { FOOTER_DIALOG } from "@/constants/dialog";
+import { FOOTER_SITE_URLS, FOOTER_DIALOG } from "@/constants/footer";
 import IconButton from "../ui/icon-button";
 
 type DialogKey = keyof typeof FOOTER_DIALOG;
@@ -31,20 +31,9 @@ const Footer = () => {
     setSelectedDialog(FOOTER_DIALOG[key]);
   };
 
-  const SITE_URLS = {
-    "KT estate": "https://www.ktestate.com",
-    "KT telecop": "https://www.kttelecop.co.kr",
-    "KT sat": "https://www.ktsat.com",
-    "KT engineering": "https://www.ktengineering.co.kr",
-    instagram: "https://www.instagram.com/ktwiz.pr",
-    facebook: "https://www.facebook.com/ktwiz",
-    youtube: "https://www.youtube.com/c/ktwiztv",
-    naver: "https://tv.naver.com/ktwiz",
-  } as const;
-
-  const handleUrlOpen = (site: keyof typeof SITE_URLS) => {
-    if (SITE_URLS[site]) {
-      window.open(SITE_URLS[site], "_blank");
+  const handleUrlOpen = (site: keyof typeof FOOTER_SITE_URLS) => {
+    if (FOOTER_SITE_URLS[site]) {
+      window.open(FOOTER_SITE_URLS[site], "_blank");
     }
   };
 
@@ -108,7 +97,7 @@ const Footer = () => {
                 </div>
               </dl>
             </div>
-            <div className="text-s text-[#9D9D9D]">
+            <div className="text-s text-ELSE-D9">
               Copyright 2022 kt sports. All rights reserved.
             </div>
           </div>

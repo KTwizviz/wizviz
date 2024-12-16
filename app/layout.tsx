@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "../css/index.css";
 import Header from "@/components/layout/header";
+import Footer from "@/components/layout/footer";
 
 export const metadata: Metadata = {
   title: "Kt wiz_wizviz",
@@ -20,6 +21,7 @@ export default function RootLayout({
       <body>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

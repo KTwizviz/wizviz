@@ -1,3 +1,4 @@
+import Script from "next/script";
 import React, { useEffect } from "react";
 
 const Map = ({ width, height }) => {
@@ -28,10 +29,16 @@ const Map = ({ width, height }) => {
   }, []);
 
   return (
-    <div
-      id="map"
-      className={`w-${width} h-${height}`}
-    ></div>
+    <div>
+      <div
+        id="map"
+        className={`w-${width} h-${height}`}
+      ></div>
+      <Script
+        type='text/javascript'
+        src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_KAKAO_API_KEY}&autoload=false`}
+      />
+    </div>
   );
 };
 

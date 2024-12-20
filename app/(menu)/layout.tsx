@@ -1,4 +1,4 @@
-import SubBannerMenu from "@/components/common/sub-banner-menu/SubMenuBanner";
+import SubBannerMenu from "@/components/common/sub-menu-banner/SubMenuBanner";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -8,19 +8,15 @@ export const metadata: Metadata = {
 
 export default function MenuLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en">
-      <body>
-        <SubBannerMenu />
-        <div className="w-full flex justify-center">
-          <div className="w-[1100px] h-auto pt-10 pb-[100px]">
-            {children}
-          </div>
-        </div>
-      </body>
-    </html>
+    <>
+      <SubBannerMenu />
+      <div className="w-full flex justify-center">
+        <div className="w-[1100px] h-auto pt-10 pb-[100px]">{children}</div>
+      </div>
+    </>
   );
 }

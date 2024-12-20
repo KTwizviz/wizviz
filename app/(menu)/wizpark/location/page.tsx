@@ -2,14 +2,18 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui";
 import KakaoMap from "@/components/wizpark/location/Map";
 import { Bus, ExternalLink, MapPin, MoveRight, Train } from "lucide-react";
 import Link from "next/link";
+import Script from "next/script";
 
 export default function page() {
 
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <KakaoMap size={{ width: "full", height: "auto" }} />
-
+      <Script
+        strategy="beforeInteractive"
+        src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_KAKAO_API_KEY}&libraries=services&autoload=false`}
+      />
+      <KakaoMap />
       <div className="space-y-6">
         <Card>
           <CardHeader>

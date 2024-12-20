@@ -51,7 +51,7 @@ const Video = () => {
       <Button
         variant="outline"
         size="lg"
-        className="text-lg px-24 py-7 border-ELSE-34"
+        className="text-xl px-24 py-7 border-ELSE-34"
         onClick={() => {
           console.log("더 많은 영상보기 이동");
         }}

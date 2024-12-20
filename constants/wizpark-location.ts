@@ -1,0 +1,2 @@
+export const LAT = 37.2978428909635
+export const LNG = 127.011348102567

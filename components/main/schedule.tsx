@@ -9,7 +9,7 @@ import TeamRanking from "@/assets/images/team_ranking.png";
 import ParkingReservaion from "@/assets/images/parking_reservation.png";
 import IconButton from "@/components/ui/icon-button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { SCHEDULE_LIST } from "@/constants/schedules";
+import { SCHEDULE_LIST } from "@/constants/main";
 
 type DayKey = keyof typeof SCHEDULE_LIST;
 

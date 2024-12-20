@@ -2,8 +2,10 @@ import Script from "next/script";
 import React, { useEffect, useRef } from "react";
 
 type MapSize = {
-  width: number | string
-  height: number | string
+  size: {
+    width: number | string
+    height: number | string
+  }
 }
 
 declare global {
@@ -12,15 +14,18 @@ declare global {
   }
 }
 
-const KakaoMap = ({ width, height }: MapSize) => {
+const KakaoMap = ({ size }: MapSize) => {
   const mapRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (window.kakao && mapRef.current) {
       window.kakao.maps.load(() => {
         const mapOption = {
-          center: new window.kakao.maps.LatLng(37.566826, 126.9786567),
+          center: new window.kakao.maps.LatLng(37.2978428909635, 127.011348102567),
           level: 3,
+          draggable: true,
+          scrollwheel: true,
+          keyboardShortcuts: true
         };
 
         const map = new window.kakao.maps.Map(mapRef.current, mapOption);
@@ -32,7 +37,7 @@ const KakaoMap = ({ width, height }: MapSize) => {
     <div>
       <div
         ref={mapRef}
-        className={`w-${width} h-${height}`}
+        className={`w-${size.width} h-${size.height}`}
       ></div>
       <Script
         type='text/javascript'

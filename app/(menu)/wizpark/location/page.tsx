@@ -1,3 +1,12 @@
+import KakaoMap from "@/components/wizpark/location/Map";
+
 export default function page() {
-  return <div>page입니다</div>;
-}
+
+
+  return (
+    <>
+
+      <KakaoMap size={{ width: "full", height: "auto" }} />
+    </>
+  );
+};

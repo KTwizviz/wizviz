@@ -40,6 +40,7 @@ const Video = () => {
       <div className="w-[1100px] mt-[510px] mb-14 flex gap-[33px] justify-self-center">
         {HIGHLIGHT_VIDEO.map((video) => (
           <VideoCard
+            key={video.videoId}
             videoId={video.videoId}
             date={video.date}
             title={video.title}

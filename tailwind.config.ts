@@ -16,9 +16,15 @@ const config: Config = {
           "0%": { transform: "translateY(-10px)", opacity: "0" },
           "100%": { transform: "translateY(0)", opacity: "1" },
         },
+        slideUp: {
+          // 사라질 때의 애니메이션 추가
+          "0%": { transform: "translateY(0)", opacity: "1" },
+          "100%": { transform: "translateY(-10px)", opacity: "0" },
+        },
       },
       animation: {
         slideDown: "slideDown 0.2s ease-out",
+        slideUp: "slideUp 0.15s ease-out",
       },
       colors: {
         ...COLORS,

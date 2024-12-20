@@ -1,45 +1,45 @@
 import Script from "next/script";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 
-const Map = ({ width, height }) => {
+type MapSize = {
+  width: number | string
+  height: number | string
+}
+
+declare global {
+  interface Window {
+    kakao: any;
+  }
+}
+
+const KakaoMap = ({ width, height }: MapSize) => {
+  const mapRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
-    const script = document.createElement("script");
-    script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_KAKAO_MAP_API}`;
-    script.async = true;
+    if (window.kakao && mapRef.current) {
+      window.kakao.maps.load(() => {
+        const mapOption = {
+          center: new window.kakao.maps.LatLng(37.566826, 126.9786567),
+          level: 3,
+        };
 
-    script.addEventListener("load", () => {
-      const kakao = window.kakao;
-
-      const mapContainer = document.getElementById("map");
-      const mapOption = {
-        center: new kakao.maps.LatLng(33.450701, 126.570667),
-        level: 3,
-      };
-
-      // 지도 생성
-      new kakao.maps.Map(mapContainer, mapOption);
-    });
-
-    document.head.appendChild(script);
-
-    // Clean Up
-    return () => {
-      document.head.removeChild(script);
-    };
+        const map = new window.kakao.maps.Map(mapRef.current, mapOption);
+      });
+    }
   }, []);
 
   return (
     <div>
       <div
-        id="map"
+        ref={mapRef}
         className={`w-${width} h-${height}`}
       ></div>
       <Script
         type='text/javascript'
-        src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_KAKAO_API_KEY}&autoload=false`}
+        src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_KAKAO_API_KEY}&autoload=false`}
       />
     </div>
   );
 };
 
-export default Map;
+export default KakaoMap;

@@ -2,7 +2,6 @@
 import { useState } from "react";
 import Image from "next/image";
 import MainSchedule from "@/assets/images/main_title_schedule.png";
-import ScheduleVideo from "@/assets/images/schedule_video.png";
 import KtwizLogo from "@/assets/images/logo_ktwiz.png";
 import LgtwinsLogo from "@/assets/images/logo_lgtwins.png";
 import TeamRanking from "@/assets/images/team_ranking.png";
@@ -94,11 +93,11 @@ const Schedule = () => {
                 </div>
               </div>
               <div className="w-[394px] h-[222px] mr-5 bg-SYSTEM-white text-SYSTEM-black flex items-center justify-center">
-                <Image
-                  src={ScheduleVideo}
-                  alt="schdule video"
-                  width={394}
-                  height={222}
+                <iframe
+                  src="https://tv.naver.com/embed/42663688"
+                  width="394"
+                  height="222"
+                  allowFullScreen
                 />
               </div>
             </div>

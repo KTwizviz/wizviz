@@ -34,7 +34,7 @@ const Schedule = () => {
             <div className="flex justify-between gap-5 px-10 py-[50px]">
               <div className="w-[605px] h-[222px] bg-SYSTEM-white text-SYSTEM-black items-center content-center">
                 {/* 상단 경기 일시 */}
-                <div className="mb-6 mx-5 pb-2 flex gap-11 border-b border-b-ELSE-DE items-center justify-center">
+                <div className="mb-8 mx-5 pb-2 flex gap-11 border-b border-b-ELSE-DE items-center justify-center">
                   <IconButton
                     icon={ChevronLeft}
                     circle
@@ -65,7 +65,7 @@ const Schedule = () => {
                     />
                     <p>KT</p>
                   </div>
-                  <div className="w-64 place-self-center justify-items-center space-y-3">
+                  <div className="w-64 place-self-center justify-items-center space-y-6">
                     <div className="flex mt-3 gap-7 font-extrabold text-6xl">
                       {scheduleData.score}
                       <p className="text-ELSE-B7">:</p>

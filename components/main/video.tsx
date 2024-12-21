@@ -24,10 +24,10 @@ const Video = () => {
           width={0}
           height={0}
           sizes="100vw"
-          className="w-[826px] mx-auto absolute left-1/2 -translate-x-1/2 -z-10"
+          className="w-[600px] mx-auto absolute left-1/2 -translate-x-1/2 -z-10"
           priority
         />
-        <div className="w-[1100px] mx-auto pt-[160px]">
+        <div className="w-[1100px] mx-auto pt-[120px]">
           <iframe
             src={`https://tv.naver.com/embed/${mainVideoId}`}
             width="1100"

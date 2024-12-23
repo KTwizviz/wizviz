@@ -1,8 +1,10 @@
 import Image from "next/image";
-import team_about_img1 from "@/assets/images/team_about_img1.png";
-import team_about_img2 from "@/assets/images/team_about_img2.png";
-import team_about_img3 from "@/assets/images/team_about_img3.png";
-import team_about_img4 from "@/assets/images/team_about_img4.png";
+import {
+  about_img1,
+  about_img2,
+  about_img3,
+  about_img4,
+} from "@/assets/images/@index";
 //문자스타일
 const textStyles = {
   sectionTitle: "text-ELSE-EC0 text-3xl font-bold leading-relaxed text-left", //제목 textStyles
@@ -10,13 +12,12 @@ const textStyles = {
     "text-ELSE-11 text-base font-normal leading-6 text-justify pt-4 pb-7", //본문 textStyles
   divider: "bg-ELSE-EC0 h-[3px] mt-6 mb-7 w-10", //구분선
 };
-
 export default function page() {
   return (
     <div className="pt-20 w-[1100px] box-border">
       <div className="pb-16">
         <Image
-          src={team_about_img1}
+          src={about_img1}
           alt="KTWiz_insignia"
           width={1100}
           height={300}
@@ -49,7 +50,7 @@ export default function page() {
         </p>
         <div className="block absolute top-0 right-0">
           <Image
-            src={team_about_img2}
+            src={about_img2}
             alt="professional_baseball_team_KTWiz"
             width={485}
             height={422}
@@ -70,7 +71,7 @@ export default function page() {
           </p>
           <div className="block absolute top-0 left-0">
             <Image
-              src={team_about_img3}
+              src={about_img3}
               alt="Suwon_KTWiz_park"
               width={550}
               height={300}
@@ -96,12 +97,7 @@ export default function page() {
         </p>
       </div>
       {/* 하단 선수들 이미지 */}
-      <Image
-        src={team_about_img4}
-        alt="KTWiz_players"
-        width={1660}
-        height={510}
-      />
+      <Image src={about_img4} alt="KTWiz_players" width={1660} height={510} />
     </div>
   );
 }

@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import MainVideo from "@/assets/images/main_title_video.png";
+import { main_title_video } from "@/assets/images/@index";
 import VideoCard from "./video-card";
 import { HIGHLIGHT_VIDEO } from "@/constants/main";
 import { Button } from "../ui";
@@ -19,7 +19,7 @@ const Video = () => {
     <div className="w-[1200px] justify-self-center relative mb-[120px] justify-items-center">
       <div className="relative h-[300px]">
         <Image
-          src={MainVideo}
+          src={main_title_video}
           alt="main schdule"
           width={0}
           height={0}

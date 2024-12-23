@@ -1,8 +1,6 @@
 "use client";
 import Image from "next/image";
-import MainGallery from "@/assets/images/main_title_gallery.png";
-import StoreBanner from "@/assets/images/store_banner.png";
-import PlayerBanner from "@/assets/images/player_banner.png";
+import { gallery, store_banner, player_banner } from "@/assets/images/@index";
 import Carousel from "../ui/custom-carousel";
 import { CAROUSE_ITEMS } from "@/constants/main";
 
@@ -11,7 +9,7 @@ const Gallery = () => {
     <div className="w-[1200px] justify-self-center relative mb-[100px] justify-items-center">
       <div className="relative h-[620px]">
         <Image
-          src={MainGallery}
+          src={gallery}
           alt="main gallery"
           width={0}
           height={0}
@@ -24,9 +22,9 @@ const Gallery = () => {
         </div>
       </div>
       <div className="w-[1100px] mt-[40px] flex gap-5 justify-self-center">
-        <Image src={StoreBanner} alt="Store Banner" width={540} height={190} />
+        <Image src={store_banner} alt="Store Banner" width={540} height={190} />
         <Image
-          src={PlayerBanner}
+          src={player_banner}
           alt="Player of the Month Banner"
           width={540}
           height={190}

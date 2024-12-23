@@ -1,11 +1,13 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
-import MainSchedule from "@/assets/images/main_title_schedule.png";
-import KtwizLogo from "@/assets/images/logo_ktwiz.png";
-import LgtwinsLogo from "@/assets/images/logo_lgtwins.png";
-import TeamRanking from "@/assets/images/team_ranking.png";
-import ParkingReservaion from "@/assets/images/parking_reservation.png";
+import {
+  schedule,
+  logo_KT,
+  logo_LG,
+  ranking,
+  reservation,
+} from "@/assets/images/@index";
 import IconButton from "@/components/ui/icon-button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { SCHEDULE_LIST } from "@/constants/main";
@@ -21,7 +23,7 @@ const Schedule = () => {
     <div className="w-[1200px] justify-self-center relative mb-[100px]">
       <div className="relative h-[300px]">
         <Image
-          src={MainSchedule}
+          src={schedule}
           alt="main schdule"
           width={0}
           height={0}
@@ -58,7 +60,7 @@ const Schedule = () => {
                 <div className="flex justify-center">
                   <div className="justify-items-center font-bold">
                     <Image
-                      src={KtwizLogo}
+                      src={logo_KT}
                       alt="ktwiz team logo"
                       width={102}
                       height={95}
@@ -83,7 +85,7 @@ const Schedule = () => {
                   </div>
                   <div className="justify-items-center font-bold">
                     <Image
-                      src={LgtwinsLogo}
+                      src={logo_LG}
                       alt="opponent team logo"
                       width={110}
                       height={95}
@@ -106,13 +108,13 @@ const Schedule = () => {
       </div>
       <div className="w-[1100px] mt-[250px] flex gap-5 justify-self-center">
         <Image
-          src={TeamRanking}
+          src={ranking}
           alt="ktwiz team ranking"
           width={540}
           height={190}
         />
         <Image
-          src={ParkingReservaion}
+          src={reservation}
           alt="parking reservaion"
           width={540}
           height={190}

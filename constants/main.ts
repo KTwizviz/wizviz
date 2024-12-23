@@ -1,13 +1,15 @@
-import CarouselImage1 from "@/assets/images/gallery1.jpeg";
-import CarouselImage2 from "@/assets/images/gallery2.jpeg";
-import CarouselImage3 from "@/assets/images/gallery3.jpeg";
-import CarouselImage4 from "@/assets/images/gallery4.jpeg";
-import CarouselImage5 from "@/assets/images/gallery5.jpeg";
-import CarouselImage6 from "@/assets/images/gallery6.jpeg";
-import CarouselImage7 from "@/assets/images/gallery7.jpeg";
-import CarouselImage8 from "@/assets/images/gallery8.jpeg";
-import CarouselImage9 from "@/assets/images/gallery9.jpeg";
-import CarouselImage10 from "@/assets/images/gallery10.jpeg";
+import {
+  CarouselImage1,
+  CarouselImage2,
+  CarouselImage3,
+  CarouselImage4,
+  CarouselImage5,
+  CarouselImage6,
+  CarouselImage7,
+  CarouselImage8,
+  CarouselImage9,
+  CarouselImage10,
+} from "@/assets/images/@index";
 
 export const SCHEDULE_LIST = {
   DAY1: {

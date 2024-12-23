@@ -2,21 +2,12 @@
 
 import { Breadcrumb, BreadcrumbList } from "@/components/ui";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
 import BreadcrumbSegment from "./BreadcrumbSegment";
 
 const BreadCrumb = () => {
-  const pathName = usePathname();
-  const [pathSegments, setPathSegments] = useState<string[]>([]);
+  const pathName: string = usePathname();
+  const pathSegments: string[] = pathName.split('/').filter((segment) => segment);
 
-  // 경로가 바뀌었을 때, 해당 경로를 상태로 저장
-  useEffect(() => {
-    const splitPath = (): string[] => {
-      if (!pathName) return [];
-      return pathName.split('/').filter((segment) => segment);
-    }
-    setPathSegments(splitPath);
-  }, [pathName])
 
   // 경로별 Breadcurmb 아이템 생성
   const generateBreadcrumbItems = () => {

@@ -3,7 +3,7 @@ import team_about_img1 from "@/assets/images/team_about_img1.png";
 import team_about_img2 from "@/assets/images/team_about_img2.png";
 import team_about_img3 from "@/assets/images/team_about_img3.png";
 import team_about_img4 from "@/assets/images/team_about_img4.png";
-
+//문자스타일
 const textStyles = {
   sectionTitle: "text-ELSE-EC0 text-3xl font-bold leading-relaxed text-left", //제목 textStyles
   paragraph:
@@ -17,18 +17,17 @@ export default function page() {
       <div className="pb-16">
         <Image
           src={team_about_img1}
-          alt="team_about_img1"
+          alt="KTWiz_insignia"
           width={1100}
           height={300}
         />
       </div>
-
+      {/* 구단소개 내용 */}
       <div className="pb-24">
         <p className={textStyles.sectionTitle}>
           신비롭고 강력한 힘, 상상의 야구 실현
         </p>
-
-        <div className={textStyles.divider}></div>
+        <div className={textStyles.divider} />
         <p className={textStyles.paragraph}>
           kt wiz는 2013년, 제 10군단에 대한 국민들의 강한열망, 경기도 및 수원시
           그리고 KT그룹의 뜨거운 유치 열정으로 비상한 솜씨와 비범한 재능을 가진
@@ -36,10 +35,9 @@ export default function page() {
           실현하겠다는 의지를 가지고 새롭게 출범하였습니다.
         </p>
       </div>
-
       <div className="pr-[520px] relative box-border h-[422px]">
         <p className={textStyles.sectionTitle}>명문구단을 위한 철저한 플랜!</p>
-        <div className={textStyles.divider}></div>
+        <div className={textStyles.divider} />
         <p className={textStyles.paragraph}>
           명문구단이 되기 위한 철저한 중장기 플랜을 통해 kt wiz의 감독 및 코칭
           스태프, 선수들을 구성하고 있습니다. <br />
@@ -52,20 +50,19 @@ export default function page() {
         <div>
           <Image
             src={team_about_img2}
-            alt="team_about_img2"
+            alt="professional_baseball_team_KTWiz"
             width={485}
             height={422}
             className="block absolute top-0 right-0"
           />
         </div>
       </div>
-
       <div className="pb-24 pt-16">
         <div className="pl-[600px] relative box-border h-[300px]">
           <p className={textStyles.sectionTitle}>
             복합 문화공간의 첨단 야구장!
           </p>
-          <div className={textStyles.divider}></div>
+          <div className={textStyles.divider} />
           <p className={textStyles.paragraph}>
             kt그룹의 우수한 ICT기술을 활용한 빅 테인먼트(BIC Tainment) 기술을
             적극 활용하여 야구를 사랑하는 팬 여러분께 차별화된 야구 콘텐츠를
@@ -75,7 +72,7 @@ export default function page() {
           <div>
             <Image
               src={team_about_img3}
-              alt="team_about_img3"
+              alt="Suwon_KTWiz_park"
               width={550}
               height={300}
               className="block absolute top-0 left-0"
@@ -83,12 +80,11 @@ export default function page() {
           </div>
         </div>
       </div>
-
       <div className="pb-24">
         <p className={textStyles.sectionTitle}>
           재미와 즐거움을 추구하는 근성 있는 구단!
         </p>
-        <div className={textStyles.divider}></div>
+        <div className={textStyles.divider} />
         <p className={textStyles.paragraph}>
           창단 과정에서 경기도민과 수원시민들이 보내주신 성원과 기대에 보답하기
           위해 앞으로도 야구를 통한 즐거운 여가 문화를 제공할 것이며 팬들과 함께
@@ -101,11 +97,11 @@ export default function page() {
           </span>
         </p>
       </div>
-
+      {/* 하단 선수들 이미지 */}
       <div>
         <Image
           src={team_about_img4}
-          alt="team_about_img4"
+          alt="KTWiz_players"
           width={1660}
           height={510}
         />

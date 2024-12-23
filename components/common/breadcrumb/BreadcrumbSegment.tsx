@@ -1,6 +1,6 @@
 import { BreadcrumbItem, BreadcrumbLink, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui";
 
-interface SegmentProps {
+type SegmentProps = {
   segment: string;
   href: string;
   isLast: boolean;

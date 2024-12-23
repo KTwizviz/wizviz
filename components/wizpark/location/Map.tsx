@@ -53,7 +53,7 @@ const KakaoMap = () => {
     <div className="flex justify-center">
       <div
         ref={mapRef}
-        className={`w-[95%] h-[550px] rounded-2xl mb-6`}
+        className={`w-[98%] h-[550px] rounded-2xl mb-6`}
       />
     </div>
   );

@@ -45,7 +45,7 @@ const BreadCrumb = () => {
   };
 
   return (
-    <div className="w-full h-[48px] flex justify-end items-center border-b-2 mb-10">
+    <div className="w-full h-[48px] flex justify-end items-center border-b-2 my-10">
       <Breadcrumb>
         <BreadcrumbList>
           {generateBreadcrumbItems()}

@@ -16,7 +16,7 @@ export default function MenuLayout({
     <>
       <SubBannerMenu />
       <div className="w-full flex justify-center">
-        <div className="w-[1100px] h-auto pt-10 pb-[100px]">
+        <div className="w-[1100px] h-auto pb-[100px]">
           <BreadCrumb />
           {children}
         </div>

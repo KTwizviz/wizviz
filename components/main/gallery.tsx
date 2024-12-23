@@ -1,0 +1,39 @@
+"use client";
+import Image from "next/image";
+import MainGallery from "@/assets/images/main_title_gallery.png";
+import StoreBanner from "@/assets/images/store_banner.png";
+import PlayerBanner from "@/assets/images/player_banner.png";
+import Carousel from "../ui/custom-carousel";
+import { CAROUSE_ITEMS } from "@/constants/main";
+
+const Gallery = () => {
+  return (
+    <div className="w-[1200px] justify-self-center relative mb-[100px] justify-items-center">
+      <div className="relative h-[620px]">
+        <Image
+          src={MainGallery}
+          alt="main gallery"
+          width={0}
+          height={0}
+          sizes="100vw"
+          className="w-[700px] mx-auto absolute left-1/2 -translate-x-1/2 -z-10"
+          priority
+        />
+        <div className="w-[1250px] mx-auto pt-[60px] overflow-hidden">
+          <Carousel images={CAROUSE_ITEMS} />
+        </div>
+      </div>
+      <div className="w-[1100px] mt-[40px] flex gap-5 justify-self-center">
+        <Image src={StoreBanner} alt="Store Banner" width={540} height={190} />
+        <Image
+          src={PlayerBanner}
+          alt="Player of the Month Banner"
+          width={540}
+          height={190}
+        />
+      </div>
+    </div>
+  );
+};
+
+export default Gallery;

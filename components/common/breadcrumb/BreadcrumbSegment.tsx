@@ -1,5 +1,4 @@
 import { BreadcrumbItem, BreadcrumbLink, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui";
-import Link from "next/link";
 
 interface SegmentProps {
   segment: string;

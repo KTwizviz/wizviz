@@ -47,13 +47,12 @@ export default function page() {
           데뷔하여 야구 팬들에게 kt wiz 이름 그대로 마법과 같은 야구를
           펼쳐보이기 위해 노력을 다하고 있습니다.
         </p>
-        <div>
+        <div className="block absolute top-0 right-0">
           <Image
             src={team_about_img2}
             alt="professional_baseball_team_KTWiz"
             width={485}
             height={422}
-            className="block absolute top-0 right-0"
           />
         </div>
       </div>
@@ -69,13 +68,12 @@ export default function page() {
             제공하고 남녀노소 누구나 즐겁고 편하게 야구를 즐길 수 있는 복합
             문화공간의 첨단 야구장을 만들 예정입니다.
           </p>
-          <div>
+          <div className="block absolute top-0 left-0">
             <Image
               src={team_about_img3}
               alt="Suwon_KTWiz_park"
               width={550}
               height={300}
-              className="block absolute top-0 left-0"
             />
           </div>
         </div>
@@ -98,14 +96,12 @@ export default function page() {
         </p>
       </div>
       {/* 하단 선수들 이미지 */}
-      <div>
-        <Image
-          src={team_about_img4}
-          alt="KTWiz_players"
-          width={1660}
-          height={510}
-        />
-      </div>
+      <Image
+        src={team_about_img4}
+        alt="KTWiz_players"
+        width={1660}
+        height={510}
+      />
     </div>
   );
 }

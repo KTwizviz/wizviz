@@ -37,14 +37,10 @@ const KakaoMap = () => {
           position: mapOption.center,
           image: markerImage,
         });
-
         marker.setMap(map);
 
-        // 
+        // 지도 타입 컨트롤 표시 *스카이뷰
         const mapTypeControl = new window.kakao.maps.MapTypeControl();
-
-
-        // 지도 타입 컨트롤을 지도에 표시합니다
         map.addControl(mapTypeControl, window.kakao.maps.ControlPosition.TOPRIGHT);
       });
     }

@@ -1,3 +1,16 @@
+import {
+  CarouselImage1,
+  CarouselImage2,
+  CarouselImage3,
+  CarouselImage4,
+  CarouselImage5,
+  CarouselImage6,
+  CarouselImage7,
+  CarouselImage8,
+  CarouselImage9,
+  CarouselImage10,
+} from "@/assets/images/@index";
+
 export const SCHEDULE_LIST = {
   DAY1: {
     date: "2024.10.11",
@@ -38,4 +51,17 @@ export const HIGHLIGHT_VIDEO = [
     title:
       "최초 업셋이 왜 안 나왔는지 알아요? 우리가 5등을 안 해봤기 때문이에요 [위즈덕후]",
   },
+];
+
+export const CAROUSE_ITEMS: CarouselImage[] = [
+  { img: CarouselImage1, key: 1 },
+  { img: CarouselImage2, key: 2 },
+  { img: CarouselImage3, key: 3 },
+  { img: CarouselImage4, key: 4 },
+  { img: CarouselImage5, key: 5 },
+  { img: CarouselImage6, key: 6 },
+  { img: CarouselImage7, key: 7 },
+  { img: CarouselImage8, key: 8 },
+  { img: CarouselImage9, key: 9 },
+  { img: CarouselImage10, key: 10 },
 ];

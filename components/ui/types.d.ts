@@ -7,3 +7,12 @@ type IconButtonProps = {
   className?: string;
   onClick: () => void;
 };
+
+type CarouselImage = {
+  img: StaticImageData;
+  key: number;
+};
+
+type CarouselProps = {
+  images: CarouselImage[];
+};

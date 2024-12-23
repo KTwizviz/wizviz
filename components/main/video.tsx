@@ -16,7 +16,7 @@ const Video = () => {
   };
 
   return (
-    <div className="w-[1200px] justify-self-center relative mb-[100px] justify-items-center">
+    <div className="w-[1200px] justify-self-center relative mb-[120px] justify-items-center">
       <div className="relative h-[300px]">
         <Image
           src={MainVideo}

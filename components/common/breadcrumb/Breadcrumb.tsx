@@ -1,4 +1,6 @@
-import { Breadcrumb, BreadcrumbList } from "@/components/ui/index";
+'use client'
+
+import { Breadcrumb, BreadcrumbList } from "@/components/ui";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import BreadcrumbSegment from "./BreadcrumbSegment";
@@ -43,11 +45,13 @@ const BreadCrumb = () => {
   };
 
   return (
-    <Breadcrumb>
-      <BreadcrumbList>
-        {generateBreadcrumbItems()}
-      </BreadcrumbList>
-    </Breadcrumb>
+    <div className="w-full h-[48px] flex justify-end items-center border-b-2 mb-10">
+      <Breadcrumb>
+        <BreadcrumbList>
+          {generateBreadcrumbItems()}
+        </BreadcrumbList>
+      </Breadcrumb>
+    </div>
   )
 }
 

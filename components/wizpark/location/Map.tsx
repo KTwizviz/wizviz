@@ -38,6 +38,13 @@ const KakaoMap = () => {
         });
 
         marker.setMap(map);
+
+        // 
+        const mapTypeControl = new window.kakao.maps.MapTypeControl();
+
+
+        // 지도 타입 컨트롤을 지도에 표시합니다
+        map.addControl(mapTypeControl, window.kakao.maps.ControlPosition.TOPRIGHT);
       });
     }
   }, [])

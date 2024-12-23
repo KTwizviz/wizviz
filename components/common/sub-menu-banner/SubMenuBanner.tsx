@@ -1,30 +1,33 @@
-'use client';
+"use client";
 import { usePathname, useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
-import { MENU_INFO } from "@/constants/menu-data";
-import submenuBg from '@/assets/images/submenu_bg.png';
+
+import submenuBg from "@/assets/images/submenu_bg.png";
 import Image from "next/image";
+import { SubMenuInfo } from "@/constants/header-menu";
 
 interface SubMenu {
-  id: string,
-  title: string,
-  descript: string,
+  id: string;
+  title: string;
+  descript: string;
 }
 
 const SubBannerMenu = () => {
   const router = useRouter();
   const pathname: string = usePathname();
-  const currentPath: string = pathname.split('/').pop() || ''; // 현재 메뉴 이름
-  const [subMenuList, setSubMenuList] = useState<SubMenu[]>([]) // 해당 메뉴의 하위 메뉴 리스트
+  const currentPath: string = pathname.split("/").pop() || ""; // 현재 메뉴 이름
+  const [subMenuList, setSubMenuList] = useState<SubMenu[]>([]); // 해당 메뉴의 하위 메뉴 리스트
   const [title, setTitle] = useState<string>("");
   const [descript, setDescript] = useState<string>("");
 
   // 현재 진입한 메뉴와 하위메뉴 정보들을 상태로 관리
   useEffect(() => {
     const findMenuInfo = () => {
-      for (const menu in MENU_INFO) {
-        const subMenuAll = MENU_INFO[menu as keyof typeof MENU_INFO] as SubMenu[];
-        const matchedMenu = subMenuAll.find(item => item.id === currentPath);
+      for (const menu in SubMenuInfo) {
+        const subMenuAll = SubMenuInfo[
+          menu as keyof typeof SubMenuInfo
+        ] as SubMenu[];
+        const matchedMenu = subMenuAll.find((item) => item.id === currentPath);
 
         if (matchedMenu) {
           setSubMenuList(subMenuAll);
@@ -61,9 +64,10 @@ const SubBannerMenu = () => {
                   key={tab.id}
                   onClick={() => router.push(tab.id)}
                   className={`flex flex-col items-center space-y-1 px-4 py-2 rounded-lg transition-all duration-300 
-                    ${currentPath === tab.id
-                      ? "bg-SYSTEM-white text-ELSE-CC6" // 적절한 색상 클래스 사용
-                      : "text-ELSE-49 hover:bg-ELSE-DE"
+                    ${
+                      currentPath === tab.id
+                        ? "bg-SYSTEM-white text-ELSE-CC6" // 적절한 색상 클래스 사용
+                        : "text-ELSE-49 hover:bg-ELSE-DE"
                     }`}
                 >
                   <span className="text-sm font-medium">{tab.title}</span>

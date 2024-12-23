@@ -1,37 +1,54 @@
 "use client";
-import { useState } from "react";
-import Link from "next/link";
+
 import wizLogo from "@/assets/images/logo_ktwiz_en.svg";
 import Image from "next/image";
-import { MainMenuItems } from "@/constants/header-menu";
+import {
+  MainMenuItems,
+  SubMenuItems,
+  SubMenuInfo,
+} from "@/constants/header-menu";
 import HeaderRightMenu from "./headerRightMenu";
 import { usePathname, useRouter } from "next/navigation";
 import HeaderDropMenu from "./headerDropMenu";
 
 const Header = () => {
-  const [isHovering, setIsHovering] = useState(false);
   const router = useRouter();
   const pathName = usePathname();
 
-  // const onHeaderMenuClick = () => {
-  //   console.log(pathName, "나 패스네임");
-  // };
-
   // 현재 경로와  url 경로가 같은지 보는 함수 t/f
   const isCurrentPath = (menuPath: string) => {
-    const formattedPath = `/${menuPath.replace(" ", "-")}`;
+    const formattedPath = `/${menuPath.replace(" ", "")}`;
+    console.log(formattedPath, "나 포맷패쓰"); // ktwiz,wizpark
     return pathName === formattedPath;
   };
 
+  //shop이나 sponsor 버튼 클릭시
+  const isShopSponsorClick = (items: string) => {
+    if (items === "shop") {
+      //새 탭으로 페이지 이동 , 링크 추후에 수정 필요
+      window.open("https://shop.ktwiz.co.kr", "_blank");
+      console.log("shop으로 이동");
+    } else if (items === "sponsor") {
+      window.open("https://www.ktwiz.co.kr", "_blank");
+      console.log("sponsor로 이동");
+    }
+  };
+  // const menuKey = MainMenuItems.map((menu) => getMenuKey(menu));
+  // console.log(menuKey, "나메인메뉴스스수퍼노바"); // 메뉴키들
+
+  console.log(MainMenuItems, "메인메뉴아이템");
+  console.log(SubMenuItems, "서브메뉴아이템");
+  console.log(SubMenuInfo, "서브메뉴인포");
+
   return (
-    <div className="relative">
+    <div className="relative z-50 group">
       <header className="w-full">
         <nav
           className={
-            "transition-colors duration-200 text-SYSTEM-white bg-SYSTEM-black"
+            "transition-colors duration-200 text-SYSTEM-white bg-SYSTEM-black cursor-pointer"
           }
-          onMouseEnter={() => setIsHovering(true)}
-          onMouseLeave={() => setIsHovering(false)}
+          // onMouseEnter={() => setIsHovering(true)}
+          // onMouseLeave={() => setIsHovering(false)}
         >
           <div className="max-w-7xl mx-auto px-4">
             <div className="flex items-center justify-between h-20">
@@ -48,22 +65,23 @@ const Header = () => {
               {/* 중앙 메뉴 */}
               <div className="absolute left-1/2 transform -translate-x-1/2 flex items-center">
                 {MainMenuItems.map((item) => (
-                  <Link
+                  <div
                     key={item}
-                    href={""}
-                    // href={`/${item.replace(" ", "-")}`}
                     className={`hover:text-SYSTEM-main w-[110px] text-center  text-xl font-bold${
                       isCurrentPath(item)
                         ? "text-SYSTEM-main"
                         : "text-SYSTEM-white"
                     }`}
+                    onClick={() => isShopSponsorClick(item)}
                   >
                     {item}
-                  </Link>
+                  </div>
                 ))}
               </div>
               {/* 드롭다운 */}
-              <div>{isHovering && <HeaderDropMenu />}</div>
+              <div>
+                <HeaderDropMenu />
+              </div>
               {/* 우측 메뉴 */}
               <HeaderRightMenu />
             </div>

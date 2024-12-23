@@ -1,4 +1,5 @@
 import { BreadcrumbItem, BreadcrumbLink, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui";
+import Link from "next/link";
 
 interface SegmentProps {
   segment: string;
@@ -12,10 +13,12 @@ const BreadcrumbSegment = ({ segment, href, isLast }: SegmentProps) => (
       {isLast ? (
         <BreadcrumbPage>{segment}</BreadcrumbPage>
       ) : (
-        <BreadcrumbLink href={href}>{segment}</BreadcrumbLink>
+        <BreadcrumbLink className="text-ELSE-90">
+          <Link href={href}>{segment}</Link>
+        </BreadcrumbLink>
       )}
     </BreadcrumbItem>
-    {isLast && <BreadcrumbSeparator />}
+    {!isLast && <BreadcrumbSeparator className="text-ELSE-90" />}
   </>
 );
 

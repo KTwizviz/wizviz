@@ -2,6 +2,12 @@ import type { Metadata } from "next";
 import "../css/index.css";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
+import { Noto_Sans_KR } from "next/font/google";
+
+const notoSansKr = Noto_Sans_KR({
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Kt wiz_wizviz",
@@ -18,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className={notoSansKr.className}>
         <div className="flex flex-col min-h-screen">
           <Header />
           <main className="flex-1">{children}</main>

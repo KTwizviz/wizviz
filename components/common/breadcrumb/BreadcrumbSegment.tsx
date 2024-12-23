@@ -13,8 +13,8 @@ const BreadcrumbSegment = ({ segment, href, isLast }: SegmentProps) => (
       {isLast ? (
         <BreadcrumbPage>{segment}</BreadcrumbPage>
       ) : (
-        <BreadcrumbLink className="text-ELSE-90">
-          <Link href={href}>{segment}</Link>
+        <BreadcrumbLink href={href} className="text-ELSE-90">
+          {segment}
         </BreadcrumbLink>
       )}
     </BreadcrumbItem>

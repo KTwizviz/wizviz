@@ -1,14 +1,57 @@
 import NewsCard from "@/components/media/news-card";
 
-export default function page() {
+export default function NewsPage() {
+  // 예시 데이터 배열
+  const newsData = [
+    {
+      id: 1,
+      title: "2024 kt wiz 73승 기념뱃지 수령",
+      content:
+        "안녕하세요 kt wiz입니다. 이번 시즌 73승 달성을 기념하여 특별 제작된 기념뱃지를 제작하였습니다...",
+      date: new Date("2024-01-23"),
+      views: 1234,
+    },
+    {
+      id: 2,
+      title: "2024 시즌 개막전 안내",
+      content: "2024 시즌 개막전 일정과 입장권 예매 안내드립니다...",
+      date: new Date("2024-01-22"),
+      views: 2345,
+    },
+    {
+      id: 3,
+      title: "구단 팬 사인회 개최",
+      content: "kt wiz 선수들과 함께하는 팬 사인회를 개최합니다...",
+      date: new Date("2024-01-21"),
+      views: 3456,
+    },
+    {
+      id: 4,
+      title: "구단 팬 사인회 개최",
+      content: "kt wiz 선수들과 함께하는 팬 사인회를 개최합니다...",
+      date: new Date("2024-01-21"),
+      views: 3456,
+    },
+    {
+      id: 5,
+      title: "구단 팬 사인회 개최",
+      content: "kt wiz 선수들과 함께하는 팬 사인회를 개최합니다...",
+      date: new Date("2024-01-21"),
+      views: 3456,
+    },
+  ];
+
   return (
     <div>
-      <NewsCard
-        title="2024 kt wiz 73승 기념뱃지 수령"
-        content="감사원은 원장을 포함한 5인 이상 11인 이하의 감사위원으로 구성한다. 국회가 재적의원 과반수의 찬성으로 계엄의 해제를 요구한 때에는 대통령은 이를 해제하여야 한다. 이 헌법시행 당시의 대법원장과 대법원판사가 아닌 법관은 제1항 단서의 규정에 불구하고 이 헌법에 의하여 임명된 것으로 본다. 명령·규칙 또는 처분이 헌법이나 법률에 위반되는 여부가 재판의 전제가 된 경우에는 대법원은 이를 최종적으로 심사할 권한을 가진다."
-        date={new Date("2024-12-25")}
-        views={99}
-      />
+      {newsData.map((news) => (
+        <NewsCard
+          key={news.id}
+          title={news.title}
+          content={news.content}
+          date={news.date}
+          views={news.views}
+        />
+      ))}
     </div>
   );
 }

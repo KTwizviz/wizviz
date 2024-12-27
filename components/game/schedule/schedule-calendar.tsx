@@ -1,7 +1,8 @@
 'use client'
 
 import { ChevronLeft, ChevronRight } from 'lucide-react'
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import axios from 'axios';
 
 interface CalendarDate {
   year: number
@@ -22,7 +23,15 @@ export function ScheduleCalendar() {
   const days = Array.from({ length: daysInMonth }, (_, i) => i + 1)
   const weekdays = ['일', '월', '화', '수', '목', '금', '토']
 
-  console.log(date)
+  useEffect(() => {
+    getMonthSchedule();
+  }, [currentDate])
+
+  const getMonthSchedule = async () => {
+    const res = await axios.get(
+      `${process.env.NEXT_PUBLIC_API_KEY}/game/monthschedule?yearMonth=${stringDate}`
+    );
+  }
 
   const handlePrevMonth = () => {
     setCurrentDate(prev => {
@@ -73,7 +82,7 @@ export function ScheduleCalendar() {
             key={day}
             className={`p-2 min-h-[140px] border border-gray-100 text-sm 
               ${day === today && currentDate.year === year && currentDate.month === month
-              ? 'bg-blue-50'
+                ? 'bg-blue-50'
                 : 'bg-SYSTEM-white'
               }`}
           >

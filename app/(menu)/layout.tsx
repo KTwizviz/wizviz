@@ -1,4 +1,5 @@
-import SubBannerMenu from "@/components/common/sub-menu-banner/SubMenuBanner";
+import BreadCrumb from "@/components/common/breadcrumb/Breadcrumb";
+import SubBannerMenu from "@/components/common/SubMenuBanner";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -15,7 +16,10 @@ export default function MenuLayout({
     <>
       <SubBannerMenu />
       <div className="w-full flex justify-center">
-        <div className="w-[1100px] h-auto pt-10 pb-[100px]">{children}</div>
+        <div className="w-[1100px] h-auto pb-[100px]">
+          <BreadCrumb />
+          {children}
+        </div>
       </div>
     </>
   );

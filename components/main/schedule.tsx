@@ -1,15 +1,16 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
-import MainSchedule from "@/assets/images/main_title_schedule.png";
-import ScheduleVideo from "@/assets/images/schedule_video.png";
-import KtwizLogo from "@/assets/images/logo_ktwiz.png";
-import LgtwinsLogo from "@/assets/images/logo_lgtwins.png";
-import TeamRanking from "@/assets/images/team_ranking.png";
-import ParkingReservaion from "@/assets/images/parking_reservation.png";
+import {
+  schedule,
+  logo_KT,
+  logo_LG,
+  ranking,
+  reservation,
+} from "@/assets/images/@index";
 import IconButton from "@/components/ui/icon-button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { SCHEDULE_LIST } from "@/constants/schedules";
+import { SCHEDULE_LIST } from "@/constants/main";
 
 type DayKey = keyof typeof SCHEDULE_LIST;
 
@@ -22,7 +23,7 @@ const Schedule = () => {
     <div className="w-[1200px] justify-self-center relative mb-[100px]">
       <div className="relative h-[300px]">
         <Image
-          src={MainSchedule}
+          src={schedule}
           alt="main schdule"
           width={0}
           height={0}
@@ -35,7 +36,7 @@ const Schedule = () => {
             <div className="flex justify-between gap-5 px-10 py-[50px]">
               <div className="w-[605px] h-[222px] bg-SYSTEM-white text-SYSTEM-black items-center content-center">
                 {/* 상단 경기 일시 */}
-                <div className="mb-6 mx-5 pb-2 flex gap-11 border-b border-b-ELSE-DE items-center justify-center">
+                <div className="mb-8 mx-5 pb-2 flex gap-11 border-b border-b-ELSE-DE items-center justify-center">
                   <IconButton
                     icon={ChevronLeft}
                     circle
@@ -59,14 +60,14 @@ const Schedule = () => {
                 <div className="flex justify-center">
                   <div className="justify-items-center font-bold">
                     <Image
-                      src={KtwizLogo}
+                      src={logo_KT}
                       alt="ktwiz team logo"
                       width={102}
                       height={95}
                     />
                     <p>KT</p>
                   </div>
-                  <div className="w-64 place-self-center justify-items-center space-y-3">
+                  <div className="w-64 place-self-center justify-items-center space-y-6">
                     <div className="flex mt-3 gap-7 font-extrabold text-6xl">
                       {scheduleData.score}
                       <p className="text-ELSE-B7">:</p>
@@ -84,7 +85,7 @@ const Schedule = () => {
                   </div>
                   <div className="justify-items-center font-bold">
                     <Image
-                      src={LgtwinsLogo}
+                      src={logo_LG}
                       alt="opponent team logo"
                       width={110}
                       height={95}
@@ -94,11 +95,11 @@ const Schedule = () => {
                 </div>
               </div>
               <div className="w-[394px] h-[222px] mr-5 bg-SYSTEM-white text-SYSTEM-black flex items-center justify-center">
-                <Image
-                  src={ScheduleVideo}
-                  alt="schdule video"
-                  width={394}
-                  height={222}
+                <iframe
+                  src="https://tv.naver.com/embed/42663688"
+                  width="394"
+                  height="222"
+                  allowFullScreen
                 />
               </div>
             </div>
@@ -107,13 +108,13 @@ const Schedule = () => {
       </div>
       <div className="w-[1100px] mt-[250px] flex gap-5 justify-self-center">
         <Image
-          src={TeamRanking}
+          src={ranking}
           alt="ktwiz team ranking"
           width={540}
           height={190}
         />
         <Image
-          src={ParkingReservaion}
+          src={reservation}
           alt="parking reservaion"
           width={540}
           height={190}

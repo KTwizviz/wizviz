@@ -10,7 +10,6 @@ const HeaderDropMenu = () => {
       (item) => item.title.includes(menuTitle) || menuTitle.includes(item.title)
     );
 
-    console.log(menuItem?.path, "나 path야");
     if (menuItem) {
       return `/${menuItem.path}`;
     }

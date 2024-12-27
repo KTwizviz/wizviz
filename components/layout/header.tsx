@@ -18,7 +18,6 @@ const Header = () => {
   // 현재 경로와  url 경로가 같은지 보는 함수 t/f
   const isCurrentPath = (menuPath: string) => {
     const formattedPath = `/${menuPath.replace(" ", "")}`;
-    console.log(formattedPath, "나 포맷패쓰"); // ktwiz,wizpark
     return pathName === formattedPath;
   };
 
@@ -27,18 +26,10 @@ const Header = () => {
     if (items === "shop") {
       //새 탭으로 페이지 이동 , 링크 추후에 수정 필요
       window.open("https://shop.ktwiz.co.kr", "_blank");
-      console.log("shop으로 이동");
     } else if (items === "sponsor") {
       window.open("https://www.ktwiz.co.kr", "_blank");
-      console.log("sponsor로 이동");
     }
   };
-  // const menuKey = MainMenuItems.map((menu) => getMenuKey(menu));
-  // console.log(menuKey, "나메인메뉴스스수퍼노바"); // 메뉴키들
-
-  console.log(MainMenuItems, "메인메뉴아이템");
-  console.log(SubMenuItems, "서브메뉴아이템");
-  console.log(SubMenuInfo, "서브메뉴인포");
 
   return (
     <div className="relative z-50 group">

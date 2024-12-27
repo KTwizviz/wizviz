@@ -9,7 +9,6 @@ type NewsPageProps = {
 export default function NewsPage({ searchParams }: NewsPageProps) {
   const currentPage = Number(searchParams.page) || 1;
   const itemsPerPage = 5;
-  const totalPages = Math.ceil(NewsData.length / itemsPerPage);
 
   const currentItems = NewsData.slice(
     (currentPage - 1) * itemsPerPage,

@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import MainVideo from "@/assets/images/main_title_video.png";
+import { main_title_video } from "@/assets/images/@index";
 import VideoCard from "./video-card";
 import { HIGHLIGHT_VIDEO } from "@/constants/main";
 import { Button } from "../ui";
@@ -16,18 +16,18 @@ const Video = () => {
   };
 
   return (
-    <div className="w-[1200px] justify-self-center relative mb-[100px] justify-items-center">
+    <div className="w-[1200px] justify-self-center relative mb-[120px] justify-items-center">
       <div className="relative h-[300px]">
         <Image
-          src={MainVideo}
+          src={main_title_video}
           alt="main schdule"
           width={0}
           height={0}
           sizes="100vw"
-          className="w-[826px] mx-auto absolute left-1/2 -translate-x-1/2 -z-10"
+          className="w-[600px] mx-auto absolute left-1/2 -translate-x-1/2 -z-10"
           priority
         />
-        <div className="w-[1100px] mx-auto pt-[160px]">
+        <div className="w-[1100px] mx-auto pt-[120px]">
           <iframe
             src={`https://tv.naver.com/embed/${mainVideoId}`}
             width="1100"

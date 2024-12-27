@@ -2,6 +2,7 @@ import Image from "next/image";
 import MainPoster from "@/assets/images/2024_post_bg_web.png";
 import Schedule from "@/components/main/schedule";
 import Video from "@/components/main/video";
+import Gallery from "@/components/main/gallery";
 
 export default function Main() {
   return (
@@ -21,6 +22,7 @@ export default function Main() {
       {/* video */}
       <Video />
       {/* gallery */}
+      <Gallery />
     </>
   );
 }

@@ -21,16 +21,17 @@ export function CustomSelectWithInput() {
         </SelectTrigger>
         <SelectContent>
           <SelectGroup className="bg-SYSTEM-white">
-            <SelectLabel>Fruits</SelectLabel>
-            <SelectItem value="apple">Apple</SelectItem>
-            <SelectItem value="banana">Banana</SelectItem>
-            <SelectItem value="blueberry">Blueberry</SelectItem>
-            <SelectItem value="grapes">Grapes</SelectItem>
-            <SelectItem value="pineapple">Pineapple</SelectItem>
+            <SelectItem value="apple">제목</SelectItem>
+            <SelectItem value="banana">내용</SelectItem>
           </SelectGroup>
         </SelectContent>
       </Select>
-      <Input id="picture" type="text" className="w-[300px]" />
+      <Input
+        id="picture"
+        type="text"
+        className="w-[300px]"
+        placeholder="검색어를 입력해주세요"
+      />
       <Button className="border">검색</Button>
     </div>
   );

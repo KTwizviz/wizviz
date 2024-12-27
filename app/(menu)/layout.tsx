@@ -1,4 +1,4 @@
-import SubBannerMenu from "@/components/common/sub-menu-banner/SubMenuBanner";
+import SubBannerMenu from "@/components/common/sub-menu-banner/sub-menu-banner";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

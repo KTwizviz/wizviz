@@ -149,10 +149,10 @@ export const UNIFIED_MENU = {
   },
 };
 
-// "kt wiz" | "wiz park"
+// "kt wiz" | "wiz park" -> 메인 메뉴
 export const MainMenuItems = Object.keys(UNIFIED_MENU) as MenuItem[];
 
-// "shop":["kt wiz란?",""], ...
+// "shop":["kt wiz란?",""], -> 서브메뉴
 export const SubMenuItems = Object.entries(UNIFIED_MENU).reduce(
   (acc, [key, value]) => {
     acc[key as MenuItem] = value.subMenus;
@@ -161,7 +161,7 @@ export const SubMenuItems = Object.entries(UNIFIED_MENU).reduce(
   {} as HeaderMenu
 );
 
-//"shop":{id:-,path:-}
+//"shop":{id:-,path:-} -> path 경로용
 export const SubMenuInfo: MenuInfoType = Object.entries(UNIFIED_MENU).reduce(
   (acc, [, value]) => {
     if (value.items.length > 0) {

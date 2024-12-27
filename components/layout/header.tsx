@@ -2,11 +2,7 @@
 
 import wizLogo from "@/assets/images/logo_ktwiz_en.svg";
 import Image from "next/image";
-import {
-  MainMenuItems,
-  SubMenuItems,
-  SubMenuInfo,
-} from "@/constants/header-menu";
+import { MainMenuItems } from "@/constants/header-menu";
 import HeaderRightMenu from "./headerRightMenu";
 import { usePathname, useRouter } from "next/navigation";
 import HeaderDropMenu from "./headerDropMenu";

@@ -9,10 +9,11 @@ interface CalendarDate {
 }
 
 export function ScheduleCalendar() {
-  const today = new Date()
-  const year = today.getFullYear()
-  const month = today.getMonth() + 1
-  const date = today.getDate()
+  const date = new Date()
+  const year = date.getFullYear()     //년 
+  const month = date.getMonth() + 1   //월
+  const today = date.getDate()        //일
+  const stringDate = String(month).padStart(2, '0') // '202409'
   const [currentDate, setCurrentDate] = useState<CalendarDate>({ year, month }) // 현재 날짜 (년,월)
 
   const daysInMonth = new Date(currentDate.year, currentDate.month, 0).getDate() // 현재 달의 마지막 날짜   
@@ -64,15 +65,16 @@ export function ScheduleCalendar() {
         ))}
 
         {Array(firstDayOfMonth).fill(null).map((_, index) => (
-          <div key={`empty-${index}`} className="p-2" />
+          <div key={`empty - ${index}`} className="p-2" />
         ))}
 
         {days.map((day) => (
           <div
             key={day}
-            className={`p-2 min-h-[140px] border border-gray-100 text-sm ${day === date && currentDate.year === year && currentDate.month === month
+            className={`p-2 min-h-[140px] border border-gray-100 text-sm 
+              ${day === today && currentDate.year === year && currentDate.month === month
               ? 'bg-blue-50'
-              : ''
+                : 'bg-SYSTEM-white'
               }`}
           >
             {day}

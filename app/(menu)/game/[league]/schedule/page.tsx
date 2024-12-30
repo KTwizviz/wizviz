@@ -1,3 +1,10 @@
+import ScheduleCalendar from "@/components/game/schedule/schedule-calendar";
+
 export default function page() {
-  return <div>page입니다</div>;
+  return (
+    <div>
+      <ScheduleCalendar />
+    </div>
+  )
+
 }

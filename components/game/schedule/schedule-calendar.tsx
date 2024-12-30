@@ -3,34 +3,38 @@
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { useEffect, useState } from "react"
 import axios from 'axios';
+import Image from 'next/image';
 
-interface CalendarDate {
-  year: number
-  month: number
-}
-
-export function ScheduleCalendar() {
+const ScheduleCalendar = () => {
   const date = new Date()
   const year = date.getFullYear()     //년 
   const month = date.getMonth() + 1   //월
   const today = date.getDate()        //일
-  const stringDate = String(month).padStart(2, '0') // '202409'
-  const [currentDate, setCurrentDate] = useState<CalendarDate>({ year, month }) // 현재 날짜 (년,월)
 
-  const daysInMonth = new Date(currentDate.year, currentDate.month, 0).getDate() // 현재 달의 마지막 날짜   
-  const firstDayOfMonth = new Date(currentDate.year, currentDate.month - 1, 1).getDay() // 현재 달의 시작 요일일
+  const [currentDate, setCurrentDate] = useState<CalendarDate>({ year, month })         // 현재 날짜 (년,월)
+  const [schedules, setSchedules] = useState<GameSchedule[]>([])                        // 스케줄 API 데이터
+
+  const stringDate = `${currentDate.year}${String(currentDate.month).padStart(2, '0')}` // 현재 선택된 날짜 스트링(API Params) e.g. '202409'
+  const daysInMonth = new Date(currentDate.year, currentDate.month, 0).getDate()        // 현재 선택된 月의 마지막 날짜   
+  const firstDayOfMonth = new Date(currentDate.year, currentDate.month - 1, 1).getDay() // 현재 선택된 시작 요일
 
   const days = Array.from({ length: daysInMonth }, (_, i) => i + 1)
   const weekdays = ['일', '월', '화', '수', '목', '금', '토']
 
   useEffect(() => {
-    getMonthSchedule();
-  }, [currentDate])
+    getMonthSchedules(stringDate);
+  }, [stringDate])
 
-  const getMonthSchedule = async () => {
-    const res = await axios.get(
-      `${process.env.NEXT_PUBLIC_API_KEY}/game/monthschedule?yearMonth=${stringDate}`
-    );
+  const getMonthSchedules = async (params: string) => {
+    try {
+      const res = await axios.get(
+        `${process.env.NEXT_PUBLIC_API_KEY}/game/monthschedule?yearMonth=${params}`
+      );
+      setSchedules(res.data.data.list);
+
+    } catch (error) {
+      console.error('API 요청 에러:', error);
+    }
   }
 
   const handlePrevMonth = () => {
@@ -77,19 +81,48 @@ export function ScheduleCalendar() {
           <div key={`empty - ${index}`} className="p-2" />
         ))}
 
-        {days.map((day) => (
-          <div
-            key={day}
-            className={`p-2 min-h-[140px] border text-sm 
+        {days.map((day) => {
+          const keyDate = stringDate + String(day).padStart(2, '0');
+          const todaySchedule = schedules.find((schedule) => schedule.displayDate === keyDate);
+
+          return (
+            <div
+              key={keyDate}
+              className={`p-2 min-h-[140px] border text-sm 
               ${day === today && currentDate.year === year && currentDate.month === month
-                ? 'border-ELSE-AB2'
-                : 'border-gray-100'
-              }`}
-          >
-            {day}
-          </div>
-        ))}
+                  ? 'border-ELSE-AB2'
+                  : 'border-gray-100'
+                }`}
+            >
+              <div className="font-medium mb-1">{day}</div>
+
+              {todaySchedule && (
+                <div className="text-xs">
+                  <div className="flex items-center gap-1 mb-1">
+                    <Image
+                      src={todaySchedule.visitLogo}
+                      alt={todaySchedule.visit}
+                      width={16}
+                      height={16}
+                    />
+                    <span>vs</span>
+                    <Image
+                      src={todaySchedule.homeLogo}
+                      alt={todaySchedule.home}
+                      width={16}
+                      height={16}
+                    />
+                  </div>
+                  <div>{todaySchedule.gtime}</div>
+                  <div>{todaySchedule.stadium}</div>
+                </div>
+              )}
+            </div>
+          )
+        })}
       </div>
     </div>
   )
 }
+
+export default ScheduleCalendar;

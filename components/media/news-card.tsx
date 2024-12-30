@@ -7,7 +7,12 @@ const NewsCard = ({ title, content, date, views }: NewsCardProps) => {
   return (
     <div className="h-[200px] flex p-4 gap-2 w-full border-b border-b-ELSE-B7">
       <div className="justify-center content-center w-[320px] h-[170px]">
-        <Image src={exampleImage} width={300} height={160} alt="example" />
+        <Image
+          src={exampleImage}
+          width={300}
+          height={160}
+          alt="example_image"
+        />
       </div>
       <div className="flex-1 h-[170px] flex flex-col justify-between">
         <div className="flex flex-col gap-3">

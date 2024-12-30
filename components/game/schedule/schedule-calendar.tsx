@@ -80,10 +80,10 @@ export function ScheduleCalendar() {
         {days.map((day) => (
           <div
             key={day}
-            className={`p-2 min-h-[140px] border border-gray-100 text-sm 
+            className={`p-2 min-h-[140px] border text-sm 
               ${day === today && currentDate.year === year && currentDate.month === month
-                ? 'bg-blue-50'
-                : 'bg-SYSTEM-white'
+                ? 'border-ELSE-AB2'
+                : 'border-gray-100'
               }`}
           >
             {day}

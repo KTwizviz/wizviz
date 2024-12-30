@@ -88,11 +88,12 @@ const ScheduleCalendar = () => {
           return (
             <div
               key={keyDate}
-              className={`p-2 min-h-[140px] border text-sm 
+              className={`p-2 min-h-[140px] border text-sm
               ${day === today && currentDate.year === year && currentDate.month === month
-                  ? 'border-ELSE-AB2'
-                  : 'border-gray-100'
-                }`}
+                  ? 'border-SYSTEM-main'
+                  : 'border-gray-100'}
+                ${todaySchedule && 'bg-ELSE-FF5'}` // 스케줄이 있는 날 배경 색상 적용
+              }
             >
               <div className="font-medium mb-1">{day}</div>
 

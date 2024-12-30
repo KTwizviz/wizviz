@@ -1,6 +1,6 @@
 'use client'
 
-import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { ChevronLeft, ChevronRight, HomeIcon } from 'lucide-react'
 import { useEffect, useState } from "react"
 import axios from 'axios';
 import Image from 'next/image';
@@ -95,27 +95,39 @@ const ScheduleCalendar = () => {
                 ${todaySchedule && 'bg-ELSE-FF5'}` // 스케줄이 있는 날 배경 색상 적용
               }
             >
-              <div className="font-medium mb-1">{day}</div>
+              <div className="flex justify-between items-center font-medium mb-1">
+                <span className="flex-1">
+                  {day}
+                </span>
+                <div className="flex justify-center flex-1">
+                  {todaySchedule?.stadium === '수원' && (
+                    <div className='flex items-center text-white bg-SYSTEM-main rounded-xl px-1.5'>
+                      <HomeIcon className='w-3 h-3 mr-1' />Home
+                    </div>
+                  )}
+                </div>
+                <div className="flex-1"></div>
+              </div>
 
               {todaySchedule && (
-                <div className="text-xs">
+                <div className="w-full flex flex-col justify-center items-center text-m">
                   <div className="flex items-center gap-1 mb-1">
                     <Image
                       src={todaySchedule.visitLogo}
                       alt={todaySchedule.visit}
-                      width={16}
-                      height={16}
+                      width={48}
+                      height={48}
                     />
-                    <span>vs</span>
+                    <span className='text-l'>vs</span>
                     <Image
                       src={todaySchedule.homeLogo}
                       alt={todaySchedule.home}
-                      width={16}
-                      height={16}
+                      width={48}
+                      height={48}
                     />
                   </div>
-                  <div>{todaySchedule.gtime}</div>
-                  <div>{todaySchedule.stadium}</div>
+                  <p>{todaySchedule.gtime}</p>
+                  <p>{todaySchedule.stadium}</p>
                 </div>
               )}
             </div>

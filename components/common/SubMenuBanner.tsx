@@ -6,11 +6,11 @@ import submenuBg from "@/assets/images/submenu_bg.png";
 import Image from "next/image";
 import { SubMenuInfo } from "@/constants/header-menu";
 
-interface SubMenu {
+type SubMenu = {
   id: string;
   title: string;
   descript: string;
-}
+};
 
 const SubBannerMenu = () => {
   const router = useRouter();

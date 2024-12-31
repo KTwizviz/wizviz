@@ -99,42 +99,47 @@ const ScheduleCalendar = () => {
                 <span className="flex-1">
                   {day}
                 </span>
-                <div className="flex justify-center flex-1">
-                  {todaySchedule?.stadium === '수원' && (
-                    <div className='flex items-center text-white bg-SYSTEM-main rounded-xl px-1.5'>
-                      <HomeIcon className='w-3 h-3 mr-1' />Home
-                    </div>
-                  )}
-                </div>
+                {todaySchedule?.outcome === '승' ?
+                  <div className='flex items-center text-white bg-SYSTEM-main rounded-xl px-1.5'>승</div>
+                  : todaySchedule?.outcome === '패' &&
+                  <div className='flex items-center text-white bg-ELSE-D9 rounded-xl px-1.5'>패</div>
+                }
                 <div className="flex-1"></div>
               </div>
 
-              {todaySchedule && (
-                <div className="w-full flex flex-col justify-center items-center text-m">
-                  <div className="flex items-center gap-1 mb-1">
-                    <Image
-                      src={todaySchedule.visitLogo}
-                      alt={todaySchedule.visit}
-                      width={48}
-                      height={48}
-                    />
-                    <span className='text-l'>vs</span>
-                    <Image
-                      src={todaySchedule.homeLogo}
-                      alt={todaySchedule.home}
-                      width={48}
-                      height={48}
-                    />
+              {
+                todaySchedule && (
+                  <div className="w-full flex flex-col justify-center items-center text-m">
+                    <div className="flex items-center gap-1 mb-1">
+                      <Image
+                        src={todaySchedule.visitLogo}
+                        alt={todaySchedule.visit}
+                        width={48}
+                        height={48}
+                      />
+                      <span className='text-l'>vs</span>
+                      <Image
+                        src={todaySchedule.homeLogo}
+                        alt={todaySchedule.home}
+                        width={48}
+                        height={48}
+                      />
+                    </div>
+                    <p>{todaySchedule.gtime}</p>
+                    {todaySchedule.stadium === '수원' ?
+                      <p className='text-SYSTEM-main font-bold'>
+                        {todaySchedule.stadium}
+                      </p>
+                      : <p> {todaySchedule.stadium}</p>
+                    }
                   </div>
-                  <p>{todaySchedule.gtime}</p>
-                  <p>{todaySchedule.stadium}</p>
-                </div>
-              )}
+                )
+              }
             </div>
           )
         })}
       </div>
-    </div>
+    </div >
   )
 }
 

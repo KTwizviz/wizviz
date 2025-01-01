@@ -13,16 +13,16 @@ export default function page() {
       <div className="pt-5 pb-8 pl-4">
         <p className="font-light">
           - 수원종합운동장 (수원 kt wiz park 포함) 주차장은 프로야구&nbsp;
-          <span className="text-ELSE-EC0 font-medium">
+          <p className="text-ELSE-EC0 font-medium inline">
             경기일에만 주차예약제
-          </span>
+          </p>
           가 시행됩니다.
         </p>
         <p className="font-light">
           -&nbsp;
-          <span className="text-ELSE-EC0 font-medium">
+          <p className="text-ELSE-EC0 font-medium inline">
             미예약 차량 주차 불가
-          </span>
+          </p>
           : 사전 예약차량만 주차 가능
         </p>
         <p className="text-ELSE-49 font-medium">
@@ -35,20 +35,33 @@ export default function page() {
           <Image src={Parking_icon} alt="parking_icon" width={25} height={25} />
           <p className="text-ELSE-EC0 text-xl font-medium">예약방법</p>
         </div>
-        <p className="font-semibold">① 홈페이지</p>
-        <p className="font-light">
+        <div className="flex items-center gap-2">
+          <p className="flex items-center justify-center w-1 h-4 bg-red-400"></p>
+          <p className="text-lg">홈페이지</p>
+        </div>
+        <p className="pb-5 pt-2 pl-2 font-light">
           kt wiz, 수원종합운동장 홈페이지를 통한 예약/ 수정 및 취소 가능
         </p>
-        <p className="pt-5 font-semibold">② 예약 및 문의</p>
-        <p className="font-light">수원종합운동장 031-240-2730~1</p>
-
-        <p className="pt-5 font-semibold">③ 예약 기간</p>
-        <p className="font-light">
+        <div className="flex items-center gap-2">
+          <p className="flex items-center justify-center w-1 h-4 bg-red-400"></p>
+          <p className="text-lg">예약 및 문의</p>
+        </div>
+        <p className="pb-5 pt-2 pl-2 font-light">
+          수원종합운동장 031-240-2730~1
+        </p>
+        <div className="flex items-center gap-2">
+          <p className="flex items-center justify-center w-1 h-4 bg-red-400"></p>
+          <p className="text-lg">예약 기간</p>
+        </div>
+        <p className="pb-5 pt-2 pl-2 font-light">
           수원 홈경기 프로야구 입장권 예매기간(kt wiz 홈경기7일전 14시00분부터
           만차시)
         </p>
-        <p className="pt-5 font-semibold">④ 예약 제외 차량</p>
-        <p className="font-light">
+        <div className="flex items-center gap-2">
+          <p className="flex items-center justify-center w-1 h-4 bg-red-400"></p>
+          <p className="text-lg">예약 제외 차량</p>
+        </div>
+        <p className="pb-5 pt-2 pl-2 font-light">
           25인승 소형버스 이상 및 장애인 차량 <br />
           :입차 시 요금만 납부
         </p>

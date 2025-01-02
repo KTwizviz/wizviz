@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Parking_img } from "@/assets/images/@index";
 import { Parking_icon } from "@/assets/icons/@index";
+import Link from "next/link";
 
 export default function page() {
   return (
@@ -12,15 +13,15 @@ export default function page() {
       </div>
       <div className="pt-5 pb-8 pl-4">
         <p className="font-light">
-          - 수원종합운동장 (수원 kt wiz park 포함) 주차장은 프로야구&nbsp;
-          <p className="text-ELSE-EC0 font-medium inline">
+          - 수원종합운동장 (수원 kt wiz park 포함) 주차장은 프로야구
+          <p className="pl-1 text-ELSE-EC0 font-medium inline">
             경기일에만 주차예약제
           </p>
           가 시행됩니다.
         </p>
         <p className="font-light">
-          -&nbsp;
-          <p className="text-ELSE-EC0 font-medium inline">
+          -
+          <p className="pl-1 text-ELSE-EC0 font-medium inline">
             미예약 차량 주차 불가
           </p>
           : 사전 예약차량만 주차 가능
@@ -74,14 +75,14 @@ export default function page() {
             height={200}
           />
           <button className="absolute inset-0 flex justify-center items-center mt-20">
-            <a
+            <Link
               className="bg-ELSE-EC0 text-white px-16 py-2 rounded-md"
               href="https://suwonparkingbaseball.or.kr/suwonwps/EgovPageLink.do?link=main/menu/prs/ParkingReservationPrivacy"
               target="_blank"
               rel="noopener noreferrer"
             >
               예약하기
-            </a>
+            </Link>
           </button>
         </div>
       </div>

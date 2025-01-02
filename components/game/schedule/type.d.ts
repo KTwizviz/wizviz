@@ -23,4 +23,5 @@ type GameSchedule = {
 type CalendarDate = {
   year: number
   month: number
+  today?: number
 }

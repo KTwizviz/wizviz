@@ -5,13 +5,8 @@ import { useEffect, useState } from "react"
 import axios from 'axios';
 import Image from 'next/image';
 
-const ScheduleCalendar = () => {
-  const date = new Date()
-  const year = date.getFullYear()     //년 
-  const month = date.getMonth() + 1   //월
-  const today = date.getDate()        //일
-
-  const [currentDate, setCurrentDate] = useState<CalendarDate>({ year, month })         // 현재 날짜 (년,월)
+const ScheduleCalendar = ({ date }: { date: CalendarDate }) => {
+  const [currentDate, setCurrentDate] = useState<CalendarDate>({ year: date.year, month: date.month })         // 현재 날짜 (년,월)
   const [schedules, setSchedules] = useState<GameSchedule[]>([])                        // 스케줄 API 데이터
 
   const stringDate = `${currentDate.year}${String(currentDate.month).padStart(2, '0')}` // 현재 선택된 날짜 스트링(API Params) e.g. '202409'
@@ -56,7 +51,7 @@ const ScheduleCalendar = () => {
   }
 
   return (
-    <div className="w-full mx-auto">
+    <div className="w-full mx-auto mt-6">
       <div className="flex items-center justify-between mb-4 px-4">
         <button onClick={handlePrevMonth} className="p-2">
           <ChevronLeft className="w-8 h-8" />
@@ -89,7 +84,7 @@ const ScheduleCalendar = () => {
             <div
               key={keyDate}
               className={`p-2 min-h-[140px] border text-sm
-              ${day === today && currentDate.year === year && currentDate.month === month
+              ${day === date.today && currentDate.year === date.year && currentDate.month === date.month
                   ? 'border-SYSTEM-main'
                   : 'border-gray-100'}
                 ${todaySchedule && 'bg-ELSE-FF5'}` // 스케줄이 있는 날 배경 색상 적용

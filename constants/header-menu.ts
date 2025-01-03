@@ -71,7 +71,7 @@ export const UNIFIED_MENU = {
     items: [
       {
         id: 1,
-        path: "/game/league/boxscore", // 기본 url 경로로 셋팅
+        path: "/game/league/schedule", // 기본 url 경로로 셋팅
         title: "정규리그",
         description: "kt wiz의 정규리그 경기 일정을 알려 드립니다.",
       },

@@ -25,5 +25,5 @@ type CarouselData = {
 }
 
 type CarouselProps = {
-  contents: CarouselImage[] | CarouselData[];
+  contents: CarouselImage[] | GameSchedule[];
 };

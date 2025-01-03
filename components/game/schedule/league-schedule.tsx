@@ -1,23 +1,23 @@
 'use client'
 
 import ScheduleCalendar from "@/components/game/schedule/schedule-calendar";
-import ScheduleCarousel from "@/components/game/schedule/schedule-carousel";
+import Carousel from "@/components/ui/custom-carousel";
 import { useEffect, useState } from "react";
 
 const LeagueSchedule = () => {
   const date = new Date()
-  const year = date.getFullYear()     //년 
-  const month = date.getMonth() + 1   //월
-  const today = date.getDate()        //일
+  const year = date.getFullYear();     //년 
+  const month = date.getMonth() + 1;   //월
+  const today = date.getDate();        //일
 
-  const [currentDate, setCurrentDate] = useState<CalendarDate>({ year: year, month: month, today: today }) // 현재 날짜 (년,월)
-  const [schedules, setSchedules] = useState<GameSchedule[]>([])                        // 스케줄 API 데이터
+  const [currentDate, setCurrentDate] = useState<CalendarDate>({ year: year, month: month, today: today }); // 현재 날짜 (년,월)
+  const [schedules, setSchedules] = useState<GameSchedule[]>([]);                       // 스케줄 API 데이터
 
-  const stringDate = `${currentDate.year}${String(currentDate.month).padStart(2, '0')}` // 현재 선택된 날짜 스트링(API Params) e.g. '202409'
+  const stringDate = `${currentDate.year}${String(currentDate.month).padStart(2, '0')}`; // 현재 선택된 날짜 스트링(API Params) e.g. '202409'
 
   useEffect(() => {
     getMonthSchedules(stringDate);
-  }, [stringDate])
+  }, [])
 
   const getMonthSchedules = async (params: string) => {
     try {
@@ -26,12 +26,16 @@ const LeagueSchedule = () => {
       );
 
       if (!res.ok) {
-        throw new Error('Network response was not ok');
-      }
+        throw new Error('네트워크 문제 발생');
+      };
 
       const data = await res.json();
-      setSchedules(data.data.list);
+      const gameSchedules = data.data.list.map((gameSchedule: GameSchedule, index: number) => ({
+        ...gameSchedule,
+        key: index
+      }));
 
+      setSchedules(gameSchedules);
     } catch (error) {
       console.error('API 요청 에러:', error);
     }
@@ -58,10 +62,14 @@ const LeagueSchedule = () => {
   }
 
   return (
-    <div>
-      <ScheduleCarousel date={currentDate} />
-      <ScheduleCalendar date={currentDate} schedules={schedules} monthHandler={handleCurrentMonth} />
-    </div>
+    <>
+      <Carousel contents={schedules} />
+      <ScheduleCalendar
+        date={currentDate}
+        schedules={schedules}
+        monthHandler={handleCurrentMonth}
+      />
+    </>
   )
 }
 

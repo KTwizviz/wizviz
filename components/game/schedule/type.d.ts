@@ -1,4 +1,5 @@
 type GameSchedule = {
+  key: number
   broadcast: string
   displayDate: string
   gameDate: number

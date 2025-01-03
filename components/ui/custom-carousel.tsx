@@ -54,7 +54,7 @@ const Carousel = ({ contents }: CarouselProps) => {
                       : "translate-x-[130%] z-10 opacity-30"
                 }`}
             >
-              {"img" in content ?
+              {'img' in content ?
                 // Case1: 이미지 Props
                 <div
                   className={`${index === 2
@@ -87,7 +87,7 @@ const Carousel = ({ contents }: CarouselProps) => {
                   <div className="w-full flex flex-col justify-center items-center text-m">
                     <span className='text-xl'>vs</span>
                     <Image
-                      src={content.logo}
+                      src={content.homeLogo}
                       alt={"대전 상대"}
                       width={48}
                       height={48}

@@ -25,3 +25,9 @@ type CalendarDate = {
   month: number
   today?: number
 }
+
+type ScheduleCalendarProps = {
+  date: CalendarDate
+  schedules: GameSchedule[]
+  monthHandler: (increment: string) => void
+}

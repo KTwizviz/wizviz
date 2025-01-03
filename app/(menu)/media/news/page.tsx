@@ -1,6 +1,6 @@
 import NewsCard from "@/components/media/news-card";
-import CustomPagination from "@/components/ui/custom-pagination";
-import { CustomSelectWithInput } from "@/components/ui/custom-select";
+import CustomPagination from "@/components/common/custom-pagination";
+import { CustomSelectWithInput } from "@/components/common/custom-select";
 import { NewsData } from "@/constants/news-data";
 
 type NewsPageProps = {

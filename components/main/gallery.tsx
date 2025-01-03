@@ -18,7 +18,7 @@ const Gallery = () => {
           priority
         />
         <div className="w-[1250px] mx-auto pt-[60px] overflow-hidden">
-          <Carousel images={CAROUSE_ITEMS} />
+          <Carousel contents={CAROUSE_ITEMS} />
         </div>
       </div>
       <div className="w-[1100px] mt-[40px] flex gap-5 justify-self-center">

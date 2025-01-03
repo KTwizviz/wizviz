@@ -13,6 +13,17 @@ type CarouselImage = {
   key: number;
 };
 
+type CarouselData = {
+  key: number;
+  broadcast: string // 방송사
+  gameDate: number  // 날짜
+  gtime: string     // 시작시간
+  logo: string      // 상대팀 로고
+  outcome: string   // 결과
+  homeScore: string
+  visitScroe: string
+}
+
 type CarouselProps = {
-  images: CarouselImage[];
+  contents: CarouselImage[] | CarouselData[];
 };

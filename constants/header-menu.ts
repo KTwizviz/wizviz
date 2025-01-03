@@ -172,3 +172,25 @@ export const SubMenuInfo: MenuInfoType = Object.entries(UNIFIED_MENU).reduce(
   },
   {} as MenuInfoType
 );
+
+// 카테고리 메뉴 정보
+export const CategoryMenus = {
+  player: {
+    hitter: [
+      { path: "/player/hitter/catcher", title: "포수" },
+      { path: "/player/hitter/infielder", title: "내야수" },
+      { path: "/player/hitter/outfielder", title: "외야수" },
+    ],
+    cheer: [
+      { path: "/player/cheer/cheering", title: "응원단" },
+      { path: "/player/cheer/copyright", title: "저작권" },
+      { path: "/player/cheer/song", title: "응원가" },
+    ],
+  },
+  game: {
+    league: [
+      { path: "/game/league/schedule", title: "경기일정" },
+      { path: "/game/league/boxscore", title: "박스스코어" },
+    ],
+  },
+};

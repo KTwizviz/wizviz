@@ -1,5 +1,5 @@
-import BreadCrumb from "@/components/common/breadcrumb/Breadcrumb";
-import SubBannerMenu from "@/components/common/SubMenuBanner";
+import BreadCrumb from "@/components/common/breadcrumb/breadcrumb"
+import CategoryMenu from "@/components/common/CategoryMenu";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

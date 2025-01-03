@@ -1,5 +1,5 @@
 "use client";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import submenuBg from "@/assets/images/submenu_bg.png";
 import Image from "next/image";
 import { SubMenuInfo } from "@/constants/header-menu";
@@ -11,7 +11,7 @@ type CategoryMenu = {
 };
 
 const CategoryMenu = () => {
-  const router = useRouter();
+  // const router = useRouter();
   const pathname = usePathname();
   console.log(pathname, "나 패스네임");
 

@@ -28,6 +28,7 @@ export const COLORS = {
     D23: "#D23933",
     A3: "#3A3B40",
     DE: "#DEDEDE",
+    F87: "#F87171",
   },
   FOOTER: {
     main: "#0098AF",

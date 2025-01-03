@@ -40,3 +40,4 @@ export { default as CarouselImage7 } from "./gallery7.jpeg";
 export { default as CarouselImage8 } from "./gallery8.jpeg";
 export { default as CarouselImage9 } from "./gallery9.jpeg";
 export { default as CarouselImage10 } from "./gallery10.jpeg";
+export { default as Parking_img } from "./parking_img.png";

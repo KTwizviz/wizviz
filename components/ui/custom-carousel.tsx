@@ -3,25 +3,25 @@ import Image from "next/image";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import IconButton from "./icon-button";
 
-const Carousel = ({ contents }: CarouselProps) => {
+const Carousel = ({ images }: CarouselProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const getVisibleContents = useCallback(() => {
-    const totalContents = contents.length;
+  const getVisibleImages = useCallback(() => {
+    const totalImages = images.length;
     return [-2, -1, 0, 1, 2].map((offset) => {
       let index = currentIndex + offset;
-      if (index < 0) index = totalContents + index;
-      if (index >= totalContents) index = index - totalContents;
-      return contents[index];
+      if (index < 0) index = totalImages + index;
+      if (index >= totalImages) index = index - totalImages;
+      return images[index];
     });
-  }, [currentIndex, contents]);
+  }, [currentIndex, images]);
 
   const handleNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % contents.length);
+    setCurrentIndex((prev) => (prev + 1) % images.length);
   };
 
   const handlePrev = () => {
-    setCurrentIndex((prev) => (prev - 1 + contents.length) % contents.length);
+    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
   };
 
   return (
@@ -40,63 +40,41 @@ const Carousel = ({ contents }: CarouselProps) => {
       />
       <div>
         <div className="relative w-full flex justify-center items-center">
-          {getVisibleContents().map((content, index) => (
+          {getVisibleImages().map((image, index) => (
             <div
-              key={content.key}
+              key={image.key}
               className={`absolute transition-all duration-700 ease-in-out ${index === 0
-                ? "-translate-x-[130%] z-10 opacity-30"
-                : index === 1
-                  ? "-translate-x-[90%] z-20 opacity-70"
-                  : index === 2
-                    ? "translate-x-0 z-30 transform scale-100"
-                    : index === 3
-                      ? "translate-x-[90%] z-20 opacity-70"
-                      : "translate-x-[130%] z-10 opacity-30"
+                  ? "-translate-x-[130%] z-10 opacity-30"
+                  : index === 1
+                    ? "-translate-x-[90%] z-20 opacity-70"
+                    : index === 2
+                      ? "translate-x-0 z-30 transform scale-100"
+                      : index === 3
+                        ? "translate-x-[90%] z-20 opacity-70"
+                        : "translate-x-[130%] z-10 opacity-30"
                 }`}
             >
-              {'img' in content ?
-                // Case1: 이미지 Props
-                <div
-                  className={`${index === 2
+              <div
+                className={`${index === 2
                     ? "shadow-2xl w-[400px] h-[400px] cursor-pointer"
                     : "w-[300px] h-[300px]"
-                    } rounded-xl overflow-hidden transition-shadow duration-800 relative`}
-                  onClick={
-                    index === 2
-                      ? () => {
-                        console.log("사진 페이지로 이동");
-                      }
-                      : undefined
-                  }
-                >
-                  <Image
-                    src={content.img}
-                    alt={`Carousel Image ${content.key}`}
-                    fill
-                    className="rounded-xl object-cover"
-                    priority={index === 2}
-                  />
-                </div>
-                : // Case2: 경기 일정 Props
-                <div
-                  className={`${index === 2
-                    ? "shadow-2xl w-[400px] h-[400px] cursor-pointer"
-                    : "w-[300px] h-[300px]"
-                    } rounded-xl overflow-hidden transition-shadow duration-800 relative`}
-                >
-                  <div className="w-full flex flex-col justify-center items-center text-m">
-                    <span className='text-xl'>vs</span>
-                    <Image
-                      src={content.homeLogo}
-                      alt={"대전 상대"}
-                      width={48}
-                      height={48}
-                    />
-                    <p>{content.gtime}</p>
-                    <p> {content.broadcast}</p>
-                  </div>
-                </div>
-              }
+                  } rounded-xl overflow-hidden transition-shadow duration-800 relative`}
+                onClick={
+                  index === 2
+                    ? () => {
+                      console.log("사진 페이지로 이동");
+                    }
+                    : undefined
+                }
+              >
+                <Image
+                  src={image.img}
+                  alt={`Carousel Image ${image.key}`}
+                  fill
+                  className="rounded-xl object-cover"
+                  priority={index === 2}
+                />
+              </div>
             </div>
           ))}
         </div>

@@ -11,7 +11,7 @@ const ScheduleCalendar = ({ date, schedules, monthHandler }: ScheduleCalendarPro
   const weekdays = ['일', '월', '화', '수', '목', '금', '토']
 
   return (
-    <div className="w-full mx-auto mt-6">
+    <div className="w-full mx-auto my-10">
       <div className="flex items-center justify-between mb-4 px-4">
         <button onClick={() => monthHandler('prev')} className="p-2">
           <ChevronLeft className="w-8 h-8" />

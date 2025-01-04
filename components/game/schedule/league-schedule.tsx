@@ -1,7 +1,7 @@
 'use client'
 
 import ScheduleCalendar from "@/components/game/schedule/schedule-calendar";
-import Carousel from "@/components/ui/custom-carousel";
+import ScheduleCarousel from "./schedule-carousel";
 import { useEffect, useState } from "react";
 
 const LeagueSchedule = () => {
@@ -17,7 +17,7 @@ const LeagueSchedule = () => {
 
   useEffect(() => {
     getMonthSchedules(stringDate);
-  }, [])
+  }, [stringDate])
 
   const getMonthSchedules = async (params: string) => {
     try {
@@ -63,7 +63,9 @@ const LeagueSchedule = () => {
 
   return (
     <>
-      <Carousel contents={schedules} />
+      <span className="text-3xl border-b-4">KT wiz 경기 일정</span>
+      <ScheduleCarousel contents={schedules} />
+      <span className="text-3xl border-b-4">모든 경기 일정</span>
       <ScheduleCalendar
         date={currentDate}
         schedules={schedules}

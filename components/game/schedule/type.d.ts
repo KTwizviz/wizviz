@@ -32,3 +32,7 @@ type ScheduleCalendarProps = {
   schedules: GameSchedule[]
   monthHandler: (increment: string) => void
 }
+
+type CarouselProps = {
+  contents: GameSchedule[];
+}

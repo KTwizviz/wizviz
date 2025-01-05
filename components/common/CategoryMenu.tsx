@@ -13,7 +13,6 @@ type CategoryMenu = {
 const CategoryMenu = () => {
   // const router = useRouter();
   const pathname = usePathname();
-  console.log(pathname, "나 패스네임");
 
   const findBannerInfoByPath = () => {
     for (const menuKey in SubMenuInfo) {

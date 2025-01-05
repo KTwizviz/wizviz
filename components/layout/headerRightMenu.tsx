@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import ktSportsLogo from "@/assets/images/logo_ktsports.png";
+import { logo_ktwports } from "@/assets/images/@index";
 
 const HeaderRightMenu = () => {
   return (
@@ -13,7 +13,12 @@ const HeaderRightMenu = () => {
         회원가입
       </Link>
       <Link href="/sports" className="border border-ELSE-D9 p-1">
-        <Image src={ktSportsLogo} alt="kt_sports_logo" width={50} height={50} />
+        <Image
+          src={logo_ktwports}
+          alt="kt_sports_logo"
+          width={64}
+          height={17}
+        />
       </Link>
     </div>
   );

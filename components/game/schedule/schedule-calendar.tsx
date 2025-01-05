@@ -109,7 +109,7 @@ const ScheduleCalendar = ({ date, schedules, allSchedules, monthHandler }: Sched
                           width={48}
                           height={48}
                         />
-                        <span className='text-l'>vs</span>
+                        <span className='text-m'>{ktSchedule.homeScore} : {ktSchedule.visitScore}</span>
                         <Image
                           src={ktSchedule.homeLogo}
                           alt={ktSchedule.home}

@@ -3,7 +3,7 @@
 import ScheduleCalendar from "@/components/game/schedule/schedule-calendar";
 import ScheduleCarousel from "./schedule-carousel";
 import { useEffect, useState } from "react";
-import getMonthSchedules from "@/api/game/api";
+import { getMonthSchedules, getAllSchedules } from "@/api/game/api";
 
 const LeagueSchedule = () => {
   const date = new Date()
@@ -12,24 +12,41 @@ const LeagueSchedule = () => {
   const today = date.getDate();        //일
 
   const [currentDate, setCurrentDate] = useState<CalendarDate>({ year: year, month: month, today: today }); // 현재 날짜 (년,월)
-  const [schedules, setSchedules] = useState<GameSchedule[]>([]);                       // 스케줄 API 데이터
+  const [schedules, setSchedules] = useState<GameSchedule[]>([]); // 스케줄 API 데이터
+  const [allSchedules, setAllSchedules] = useState<GameSchedule[]>([]); // 스케줄 API 데이터
 
   const stringDate = `${currentDate.year}${String(currentDate.month).padStart(2, '0')}`; // 현재 선택된 날짜 스트링(API Params) e.g. '202409'
 
   useEffect(() => {
-    const fetchSchedules = async () => {
+    const fetchMonthSchedules = async () => {
       try {
         const data = await getMonthSchedules(stringDate);
         if (!data) {
-          console.log('일정을 불러오는데 실패했습니다');
+          console.log('KT wiz 일정을 불러오는데 실패했습니다');
           return;
         }
         setSchedules(data);
       } catch (error) {
-        console.log('일정을 불러오는데 실패했습니다:', error);
+        console.log('KT wiz 일정을 불러오는데 실패했습니다:', error);
       }
     };
-    fetchSchedules();
+    fetchMonthSchedules();
+  }, [stringDate]);
+
+  useEffect(() => {
+    const fetchAllSchedules = async () => {
+      try {
+        const data = await getAllSchedules(stringDate);
+        if (!data) {
+          console.log('모든 일정을 불러오는데 실패했습니다');
+          return;
+        }
+        setAllSchedules(data);
+      } catch (error) {
+        console.log('모든 일정을 불러오는데 실패했습니다:', error);
+      }
+    };
+    fetchAllSchedules();
   }, [stringDate]);
 
   const handleCurrentMonth = (month: string) => {
@@ -60,6 +77,7 @@ const LeagueSchedule = () => {
       <ScheduleCalendar
         date={currentDate}
         schedules={schedules}
+        allSchedules={allSchedules}
         monthHandler={handleCurrentMonth}
       />
     </>

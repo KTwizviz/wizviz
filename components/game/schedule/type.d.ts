@@ -30,6 +30,7 @@ type CalendarDate = {
 type ScheduleCalendarProps = {
   date: CalendarDate
   schedules: GameSchedule[]
+  allSchedules: GameSchedule[]
   monthHandler: (increment: string) => void
 }
 

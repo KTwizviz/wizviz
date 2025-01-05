@@ -1,4 +1,4 @@
-const getMonthSchedules = async (params: string) => {
+export async function getMonthSchedules(params: string) {
   try {
     const res = await fetch(
       `${process.env.NEXT_PUBLIC_API_KEY}/game/monthschedule?yearMonth=${params}`,
@@ -20,4 +20,24 @@ const getMonthSchedules = async (params: string) => {
   }
 }
 
-export default getMonthSchedules
+export async function getAllSchedules(params: string) {
+  try {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_API_KEY}/game/allgameschedule?yearMonth=${params}`,
+    );
+
+    if (!res.ok) {
+      throw new Error('네트워크 문제 발생');
+    };
+
+    const data = await res.json();
+    const allSchedules = data.data.list.map((gameSchedule: GameSchedule, index: number) => ({
+      ...gameSchedule,
+      key: index
+    }));
+
+    return allSchedules;
+  } catch (error) {
+    console.error('API 요청 에러:', error);
+  }
+}

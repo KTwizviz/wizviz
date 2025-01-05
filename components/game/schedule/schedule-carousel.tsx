@@ -66,7 +66,7 @@ const ScheduleCarousel = ({ contents }: CarouselProps) => {
                   } rounded-xl overflow-hidden transition-shadow duration-800 relative bg-SYSTEM-white`}
               >
                 <div className="w-full h-full flex flex-col justify-center items-center">
-                  <span className="bg-ELSE-DE border rounded-2xl text-l px-2">{content.displayDate.slice(4, 6)}월 {content.displayDate.slice(6, 8)}일</span>
+                  <span className="shadow-sm bg-ELSE-DE border rounded-2xl text-m px-2">{content.displayDate.slice(4, 6)}월 {content.displayDate.slice(6, 8)}일</span>
                   <div className="w-full flex justify-around items-center">
                     <div className="flex flex-col items-center">
                       <span>Home</span>

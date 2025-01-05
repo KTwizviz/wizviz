@@ -3,6 +3,7 @@
 import ScheduleCalendar from "@/components/game/schedule/schedule-calendar";
 import ScheduleCarousel from "./schedule-carousel";
 import { useEffect, useState } from "react";
+import getMonthSchedules from "@/api/game/api";
 
 const LeagueSchedule = () => {
   const date = new Date()
@@ -16,30 +17,20 @@ const LeagueSchedule = () => {
   const stringDate = `${currentDate.year}${String(currentDate.month).padStart(2, '0')}`; // 현재 선택된 날짜 스트링(API Params) e.g. '202409'
 
   useEffect(() => {
-    getMonthSchedules(stringDate);
-  }, [stringDate])
-
-  const getMonthSchedules = async (params: string) => {
-    try {
-      const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_KEY}/game/monthschedule?yearMonth=${params}`,
-      );
-
-      if (!res.ok) {
-        throw new Error('네트워크 문제 발생');
-      };
-
-      const data = await res.json();
-      const gameSchedules = data.data.list.map((gameSchedule: GameSchedule, index: number) => ({
-        ...gameSchedule,
-        key: index
-      }));
-
-      setSchedules(gameSchedules);
-    } catch (error) {
-      console.error('API 요청 에러:', error);
-    }
-  }
+    const fetchSchedules = async () => {
+      try {
+        const data = await getMonthSchedules(stringDate);
+        if (!data) {
+          console.log('일정을 불러오는데 실패했습니다');
+          return;
+        }
+        setSchedules(data);
+      } catch (error) {
+        console.log('일정을 불러오는데 실패했습니다:', error);
+      }
+    };
+    fetchSchedules();
+  }, [stringDate]);
 
   const handleCurrentMonth = (month: string) => {
     if (month === 'next') {

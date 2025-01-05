@@ -3,7 +3,7 @@ import Image from "next/image";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import IconButton from "./icon-button";
 
-const Carousel = ({ images }: CarouselProps) => {
+const Carousel = ({ images }: CustomCarouselProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const getVisibleImages = useCallback(() => {
@@ -44,20 +44,20 @@ const Carousel = ({ images }: CarouselProps) => {
             <div
               key={image.key}
               className={`absolute transition-all duration-700 ease-in-out ${index === 0
-                  ? "-translate-x-[130%] z-10 opacity-30"
-                  : index === 1
-                    ? "-translate-x-[90%] z-20 opacity-70"
-                    : index === 2
-                      ? "translate-x-0 z-30 transform scale-100"
-                      : index === 3
-                        ? "translate-x-[90%] z-20 opacity-70"
-                        : "translate-x-[130%] z-10 opacity-30"
+                ? "-translate-x-[130%] z-10 opacity-30"
+                : index === 1
+                  ? "-translate-x-[90%] z-20 opacity-70"
+                  : index === 2
+                    ? "translate-x-0 z-30 transform scale-100"
+                    : index === 3
+                      ? "translate-x-[90%] z-20 opacity-70"
+                      : "translate-x-[130%] z-10 opacity-30"
                 }`}
             >
               <div
                 className={`${index === 2
-                    ? "shadow-2xl w-[400px] h-[400px] cursor-pointer"
-                    : "w-[300px] h-[300px]"
+                  ? "shadow-2xl w-[400px] h-[400px] cursor-pointer"
+                  : "w-[300px] h-[300px]"
                   } rounded-xl overflow-hidden transition-shadow duration-800 relative`}
                 onClick={
                   index === 2

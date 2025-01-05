@@ -71,9 +71,9 @@ const LeagueSchedule = () => {
 
   return (
     <>
-      <span className="text-3xl border-b-4">KT wiz 경기 일정</span>
+      <span className="text-3xl border-b-4">{currentDate.month}월 경기 일정</span>
       <ScheduleCarousel contents={schedules} />
-      <span className="text-3xl border-b-4">모든 경기 일정</span>
+      <span className="text-3xl border-b-4">한눈에 보기</span>
       <ScheduleCalendar
         date={currentDate}
         schedules={schedules}

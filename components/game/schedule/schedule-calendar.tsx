@@ -12,7 +12,7 @@ const ScheduleCalendar = ({ date, schedules, allSchedules, monthHandler }: Sched
   const days = Array.from({ length: daysInMonth }, (_, i) => i + 1)
   const weekdays = ['일', '월', '화', '수', '목', '금', '토']
 
-  const [isAllScheduleMode, setIsAllScheduleMode] = useState(false);
+  const [isAllLeagueMode, setIsAllLeagueMode] = useState(false);
 
   return (
     <div className="w-full mx-auto my-10">
@@ -30,11 +30,11 @@ const ScheduleCalendar = ({ date, schedules, allSchedules, monthHandler }: Sched
       </div>
       <div className='flex justify-end gap-2 pr-4'>
         <Switch
-          checked={isAllScheduleMode}
-          onCheckedChange={(checked) => setIsAllScheduleMode(checked)}
+          checked={isAllLeagueMode}
+          onCheckedChange={(checked) => setIsAllLeagueMode(checked)}
         />
         <span className='font-medium text-sm text-ELSE-49'>
-          모든 경기
+          전체 리그
         </span>
       </div>
 
@@ -67,7 +67,7 @@ const ScheduleCalendar = ({ date, schedules, allSchedules, monthHandler }: Sched
             >
               <div className="flex justify-between items-center font-medium mb-1">
                 <span className="flex-1">{day}</span>
-                {!isAllScheduleMode && ktSchedule?.outcome && (
+                {!isAllLeagueMode && ktSchedule?.outcome && (
                   <div
                     className={`flex items-center text-white rounded-xl px-1.5 ${ktSchedule.outcome === '승' ? 'bg-SYSTEM-main' : 'bg-ELSE-D9'
                       }`}
@@ -78,18 +78,18 @@ const ScheduleCalendar = ({ date, schedules, allSchedules, monthHandler }: Sched
                 <div className="flex-1"></div>
               </div>
               {
-                isAllScheduleMode ?
+                isAllLeagueMode ?
                   (allSchedule &&
                     allSchedule.map((schedule) => {
                       return (
-                        <div key={schedule.key} className='flex justify-center'>
+                        <div key={schedule.key} className='flex justify-center text-s'>
                           <Image
                             src={schedule.visitLogo}
                             alt={schedule.visit}
                             width={24}
                             height={24}
                           />
-                          {schedule.home} vs {schedule.visit}
+                          {schedule.home} {schedule.homeScore} : {schedule.visitScore} {schedule.visit}
                           <Image
                             src={schedule.homeLogo}
                             alt={schedule.home}

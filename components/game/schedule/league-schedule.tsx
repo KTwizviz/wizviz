@@ -25,7 +25,8 @@ const LeagueSchedule = () => {
           console.log('KT wiz 일정을 불러오는데 실패했습니다');
           return;
         }
-        setSchedules(data);
+        const monthSchedules = indexingData(data.data.list)
+        setSchedules(monthSchedules);
       } catch (error) {
         console.log('KT wiz 일정을 불러오는데 실패했습니다:', error);
       }
@@ -41,13 +42,22 @@ const LeagueSchedule = () => {
           console.log('모든 일정을 불러오는데 실패했습니다');
           return;
         }
-        setAllSchedules(data);
+        const allSchedules = indexingData(data.data.list)
+        setAllSchedules(allSchedules);
       } catch (error) {
         console.log('모든 일정을 불러오는데 실패했습니다:', error);
       }
     };
     fetchAllSchedules();
   }, [stringDate]);
+
+  const indexingData = (data: GameSchedule[]) => {
+    const schedules = data.map((gameSchedule: GameSchedule, index: number) => ({
+      ...gameSchedule,
+      key: index
+    }));
+    return schedules
+  }
 
   const handleCurrentMonth = (month: string) => {
     if (month === 'next') {

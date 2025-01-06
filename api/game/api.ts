@@ -9,12 +9,8 @@ export async function getMonthSchedules(params: string) {
     };
 
     const data = await res.json();
-    const gameSchedules = data.data.list.map((gameSchedule: GameSchedule, index: number) => ({
-      ...gameSchedule,
-      key: index
-    }));
 
-    return gameSchedules;
+    return data;
   } catch (error) {
     console.error('API 요청 에러:', error);
   }
@@ -31,12 +27,8 @@ export async function getAllSchedules(params: string) {
     };
 
     const data = await res.json();
-    const allSchedules = data.data.list.map((gameSchedule: GameSchedule, index: number) => ({
-      ...gameSchedule,
-      key: index
-    }));
 
-    return allSchedules;
+    return data;
   } catch (error) {
     console.error('API 요청 에러:', error);
   }

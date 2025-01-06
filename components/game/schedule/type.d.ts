@@ -37,3 +37,11 @@ type ScheduleCalendarProps = {
 type CarouselProps = {
   contents: GameSchedule[];
 }
+
+type CalendarCellProps = {
+  day: number
+  date: CalendarDate
+  mode: boolean
+  ktSchedules: GameSchedule[]
+  allSchedules: GameSchedule[]
+}

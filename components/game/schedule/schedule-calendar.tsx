@@ -2,8 +2,8 @@
 
 import { Switch } from '@/components/ui/switch';
 import { ChevronLeft, ChevronRight } from 'lucide-react'
-import Image from 'next/image';
 import { useState } from 'react';
+import CalendarCell from './calendar-cell';
 
 const ScheduleCalendar = ({ date, schedules, allSchedules, monthHandler }: ScheduleCalendarProps) => {
   const daysInMonth = new Date(date.year, date.month, 0).getDate()        // 현재 선택된 月의 마지막 날짜   
@@ -31,7 +31,7 @@ const ScheduleCalendar = ({ date, schedules, allSchedules, monthHandler }: Sched
       <div className='flex justify-end gap-2 pr-4'>
         <Switch
           checked={isAllLeagueMode}
-          onCheckedChange={(checked) => setIsAllLeagueMode(checked)}
+          onCheckedChange={(checked: boolean) => setIsAllLeagueMode(checked)}
         />
         <span className='font-medium text-sm text-ELSE-49'>
           전체 리그
@@ -49,86 +49,17 @@ const ScheduleCalendar = ({ date, schedules, allSchedules, monthHandler }: Sched
           <div key={`empty - ${index}`} className="p-2" />
         ))}
 
-        {days.map((day) => {
-          const keyDate = `${date.year}${String(date.month).padStart(2, '0')}` + String(day).padStart(2, '0');
-          const ktSchedule = schedules.find((schedule) => schedule.displayDate === keyDate);
-          const allSchedule = allSchedules.filter((schedule) => schedule.displayDate === keyDate);
-          console.log(allSchedule)
-
-          return (
-            <div
-              key={keyDate}
-              className={`p-2 min-h-[140px] border text-sm
-              ${day === date.today && date.year === date.year && date.month === date.month
-                  ? 'border-SYSTEM-main'
-                  : 'border-gray-100'}
-                ${ktSchedule && 'bg-ELSE-FF5'}` // 스케줄이 있는 날 배경 색상 적용
-              }
-            >
-              <div className="flex justify-between items-center font-medium mb-1">
-                <span className="flex-1">{day}</span>
-                {!isAllLeagueMode && ktSchedule?.outcome && (
-                  <div
-                    className={`flex items-center text-white rounded-xl px-1.5 ${ktSchedule.outcome === '승' ? 'bg-SYSTEM-main' : 'bg-ELSE-D9'
-                      }`}
-                  >
-                    {ktSchedule.outcome}
-                  </div>
-                )}
-                <div className="flex-1"></div>
-              </div>
-              {
-                isAllLeagueMode ?
-                  (allSchedule &&
-                    allSchedule.map((schedule) => {
-                      return (
-                        <div key={schedule.key} className='flex justify-center text-s'>
-                          <Image
-                            src={schedule.visitLogo}
-                            alt={schedule.visit}
-                            width={24}
-                            height={24}
-                          />
-                          {schedule.home} {schedule.homeScore} : {schedule.visitScore} {schedule.visit}
-                          <Image
-                            src={schedule.homeLogo}
-                            alt={schedule.home}
-                            width={24}
-                            height={24}
-                          />
-                        </div>
-                      )
-                    })
-                  ) :
-                  (ktSchedule &&
-                    (<div className="w-full flex flex-col justify-center items-center text-m">
-                      <div className="flex items-center gap-1 mb-1">
-                        <Image
-                          src={ktSchedule.visitLogo}
-                          alt={ktSchedule.visit}
-                          width={48}
-                          height={48}
-                        />
-                        <span className='text-m'>{ktSchedule.homeScore} : {ktSchedule.visitScore}</span>
-                        <Image
-                          src={ktSchedule.homeLogo}
-                          alt={ktSchedule.home}
-                          width={48}
-                          height={48}
-                        />
-                      </div>
-                      <p>{ktSchedule.gtime}</p>
-                      {ktSchedule.stadium === '수원' ?
-                        <p className='text-SYSTEM-main font-bold'>
-                          {ktSchedule.stadium}
-                        </p>
-                        : <p> {ktSchedule.stadium}</p>
-                      }
-                    </div>))
-              }
-            </div>
-          )
-        })}
+        {days.map((day) => (
+          // 캘린더의 개별 셀
+          <CalendarCell
+            key={day}
+            day={day}
+            date={date}
+            mode={isAllLeagueMode}
+            ktSchedules={schedules}
+            allSchedules={allSchedules}
+          />)
+        )}
       </div>
     </div >
   )

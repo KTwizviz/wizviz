@@ -1,4 +1,4 @@
-import BreadCrumb from "@/components/common/breadcrumb/Breadcrumb";
+import BreadCrumb from "@/components/common/breadcrumb/breadcrumb"
 import CategoryMenu from "@/components/common/CategoryMenu";
 import type { Metadata } from "next";
 

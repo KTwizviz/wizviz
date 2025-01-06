@@ -4,7 +4,6 @@ import { CoachResponse } from "./types";
 
 export const getCoachList = async (): Promise<CoachInfo[]> => {
   const BASE_URL = process.env.NEXT_PUBLIC_API_KEY;
-  console.log(BASE_URL, "나 베이스유알엘");
   const res = await fetch(`${BASE_URL}/player/coachlist`, { method: "GET" });
 
   if (!res.ok) {

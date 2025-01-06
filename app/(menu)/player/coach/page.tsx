@@ -1,3 +1,10 @@
-export default function page() {
-  return <div>page입니다</div>;
+import { CoachList } from "@/components/player/coach-list";
+
+export default async function Page() {
+  return (
+    <>
+      {/* @ts-ignore */}
+      <CoachList />
+    </>
+  );
 }

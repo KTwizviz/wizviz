@@ -3,10 +3,12 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'http',
-        hostname: '54.180.228.165',
-        port: '',
-        pathname: '/api/static/**',
+        protocol: "https",
+        hostname: "wizzap.ktwiz.co.kr",
+      },
+      {
+        protocol: "http",
+        hostname: "54.180.228.165",
       },
     ],
   },

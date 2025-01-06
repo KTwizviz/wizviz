@@ -2,34 +2,16 @@
 import { usePathname } from "next/navigation";
 import submenuBg from "@/assets/images/submenu_bg.png";
 import Image from "next/image";
-import { SubMenuInfo } from "@/constants/header-menu";
 import Link from "next/link";
-
-type CategoryMenu = {
-  title: string;
-  description: string;
-};
+import { findBannerInfo, findCategoryMenus } from "@/utils/find-menu";
 
 const CategoryMenu = () => {
-  // const router = useRouter();
   const pathname = usePathname();
+  const currentPath = pathname.split("/").filter(Boolean);
+  const [mainMenu, subMenu] = currentPath;
 
-  const findBannerInfoByPath = () => {
-    for (const menuKey in SubMenuInfo) {
-      const menuItems = SubMenuInfo[menuKey];
-      const matchedItem = menuItems.find((item) => item.path === pathname);
-
-      if (matchedItem) {
-        return {
-          title: matchedItem.title,
-          description: matchedItem.description,
-        };
-      }
-    }
-    return { title: "", description: "" };
-  };
-
-  const bannerInfo = findBannerInfoByPath();
+  const bannerInfo = findBannerInfo(pathname);
+  const categoryMenus = findCategoryMenus(mainMenu, subMenu);
 
   return (
     <div className="w-full">
@@ -50,33 +32,28 @@ const CategoryMenu = () => {
             </p>
           </div>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 transform translate-y-1/2">
-          <div className="max-w-2xl mx-auto bg-SYSTEM-white rounded-lg shadow-lg">
-            <div className="flex justify-around p-4 items-center">
-              <Link
-                href="#"
-                className="flex  space-y-1 px-4 py-2 rounded-lg transition-all duration-300 bg-yellow-400"
-              >
-                서브메뉴리스트
-              </Link>
-              <Link href="#">서브메뉴2</Link>
-              {/* {subMenuList.map((tab) => (
-                <button
-                  key={tab.id}
-                  onClick={() => router.push(tab.id)}
-                  className={`flex flex-col items-center space-y-1 px-4 py-2 rounded-lg transition-all duration-300 
-                    ${
-                      currentPath === tab.id
-                        ? "bg-SYSTEM-white text-ELSE-CC6"
-                        : "text-ELSE-49 hover:bg-ELSE-DE"
-                    }`}
-                >
-                  <span className="text-sm font-medium">{tab.title}</span>
-                </button>
-              ))} */}
+        {categoryMenus.length > 0 && (
+          <div className="absolute bottom-0 left-0 right-0 transform translate-y-1/2">
+            <div className="max-w-2xl mx-auto bg-SYSTEM-white rounded-lg shadow-lg">
+              <div className="flex justify-around p-4 items-center">
+                {categoryMenus.map((menu) => (
+                  <Link
+                    key={menu.path}
+                    href={menu.path}
+                    className={`flex items-center px-4 py-2 rounded-lg transition-all duration-300
+                      ${
+                        pathname === menu.path
+                          ? "bg-SYSTEM-white text-ELSE-CC6"
+                          : "text-ELSE-49 hover:bg-ELSE-DE"
+                      }`}
+                  >
+                    <span className="text-sm font-medium">{menu.title}</span>
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );

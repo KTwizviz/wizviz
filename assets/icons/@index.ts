@@ -6,3 +6,4 @@ export { default as Ticket } from "./icon_ticket.png";
 export { default as User } from "./icon_user.png";
 export { default as Youtube } from "./icon_youtube.png";
 export { default as Views } from "./icon_views.svg";
+export { default as Parking_icon } from "./icon_parking.png";

@@ -31,17 +31,17 @@ export const ParkingInstructions = () => {
         title={"예약 차량 제외"}
         content={`25인승 소형버스 이상 및 장애인 차량\n:입차 시 요금만 납부`}
       />
-      <div className={"relative w-full h-[200px] -mt-28 z-0"}>
+      <div className={"relative w-full h-[200px] -mt-28"}>
         <Image
           src={Parking_img}
           alt={"Parking_img"}
-          className={"absolute right-0 bottom-0"}
+          className={"absolute right-0 bottom-0 z-20"}
           width={800}
           height={200}
         />
         <Link
           className={
-            "absolute left-[40%] bottom-10 bg-ELSE-EC0 text-SYSTEM-white w-48 h-10 rounded-md flex items-center justify-center"
+            "absolute left-[40%] bottom-10 bg-ELSE-EC0 text-SYSTEM-white w-48 h-10 rounded-md flex items-center justify-center z-30"
           }
           href={
             "https://suwonparkingbaseball.or.kr/suwonwps/EgovPageLink.do?link=main/menu/prs/ParkingReservationPrivacy"

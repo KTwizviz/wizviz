@@ -1,3 +1,11 @@
+import { ParkingNotice } from "@/components/wizpark/parking/parking-notice";
+import { ParkingInstructions } from "@/components/wizpark/parking/parking-instructions";
+
 export default function page() {
-  return <div>page입니다</div>;
+  return (
+    <div className="p-4">
+      <ParkingNotice />
+      <ParkingInstructions />
+    </div>
+  );
 }

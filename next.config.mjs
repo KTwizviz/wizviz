@@ -6,6 +6,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "wizzap.ktwiz.co.kr",
       },
+      {
+        protocol: "http",
+        hostname: "54.180.228.165",
+      },
     ],
   },
 };

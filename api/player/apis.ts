@@ -2,6 +2,7 @@ import { CoachResponse } from "./types";
 
 // api/player/coachlist
 const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
+console.log(BASE_URL);
 
 export const getCoachList = async (): Promise<CoachInfo[]> => {
   const res = await fetch(`${BASE_URL}/player/coachlist`, {

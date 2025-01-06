@@ -1,7 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["wizzap.ktwiz.co.kr"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "wizzap.ktwiz.co.kr",
+      },
+    ],
   },
 };
 

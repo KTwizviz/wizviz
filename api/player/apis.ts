@@ -1,15 +1,10 @@
 import { CoachResponse } from "./types";
 
 // api/player/coachlist
-// const BASE_URL = process.env.NEXT_PUBLIC_API_KEY;
+const BASE_URL = process.env.NEXT_PUBLIC_API_KEY || "http://localhost:3000/api";
 
 export const getCoachList = async (): Promise<CoachInfo[]> => {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_KEY}/player/coachlist`,
-    {
-      method: "GET",
-    }
-  );
+  const res = await fetch(`${BASE_URL}/player/coachlist`, { method: "GET" });
 
   if (!res.ok) {
     throw new Error("Failed to fetch coach list");

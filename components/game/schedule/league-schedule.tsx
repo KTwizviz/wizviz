@@ -3,7 +3,7 @@
 import ScheduleCalendar from "@/components/game/schedule/schedule-calendar";
 import ScheduleCarousel from "./schedule-carousel";
 import { useEffect, useState } from "react";
-import { getMonthSchedules, getAllSchedules } from "@/api/game/api";
+import { getMonthSchedules, getAllSchedules } from "@/api/game/apis";
 
 const LeagueSchedule = () => {
   const date = new Date()

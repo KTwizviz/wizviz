@@ -2,7 +2,7 @@
 
 import { Breadcrumb, BreadcrumbList } from "@/components/ui";
 import { usePathname } from "next/navigation";
-import BreadcrumbSegment from "./BreadcrumbSegment";
+import BreadcrumbSegment from "./breadcrumb-segment";
 
 const BreadCrumb = () => {
   const pathName: string = usePathname();

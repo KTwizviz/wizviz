@@ -5,33 +5,33 @@ export const UNIFIED_MENU = {
     items: [
       {
         id: 1,
-        path: "ktwiz/about",
+        path: "/ktwiz/about",
         title: "kt wiz는?",
-        descript: "kt wiz의 새소식을 발빠르게 전해 드립니다.",
+        description: "한국 프로야구의 '10번째 심장' kt wi를 소개합니다.",
       },
       {
-        id: "wiz-news",
-        path: "ktwiz/bi",
+        id: 2,
+        path: "/ktwiz/bi",
         title: "구단 BI",
-        descript: "kt wiz의 새소식을 발빠르게 전해 드립니다.",
+        description: "kt wiz를 대표하는 상징들을 소개 합니다.",
       },
       {
-        id: "wiz-news",
-        path: "ktwiz/policy",
+        id: 3,
+        path: "/ktwiz/policy",
         title: "회원 정책",
-        descript: "kt wiz의 새소식을 발빠르게 전해 드립니다.",
+        description: "kt wiz 회원만의 특별한 할인 혜택을 만나 보세요.",
       },
       {
-        id: "wiz-news",
-        path: "ktwiz/sponsor",
+        id: 4,
+        path: "/ktwiz/sponsor",
         title: "스폰서",
-        descript: "kt wiz의 새소식을 발빠르게 전해 드립니다.",
+        description: "kt wiz와 함께하는 스폰서를 소개합니다.",
       },
       {
-        id: "wiz-news",
-        path: "ktwiz/wallpaper",
+        id: 5,
+        path: "/ktwiz/wallpaper",
         title: "월페이퍼",
-        descript: "kt wiz의 새소식을 발빠르게 전해 드립니다.",
+        description: "kt wiz 팬들을 위한 월페이퍼 다운로드 서비스",
       },
     ],
   },
@@ -40,28 +40,28 @@ export const UNIFIED_MENU = {
     subMenus: ["수원 kt wiz park", "주차 예약", "찾아오기", "익산야구장"],
     items: [
       {
-        id: "wiz-news",
-        path: "wizpark/intro",
+        id: 1,
+        path: "/wizpark/intro",
         title: "수원 kt wiz park",
-        descript: "kt wiz의 새소식을 발빠르게 전해 드립니다.",
+        description: "suwon kt wiz park를 소개합니다.",
       },
       {
-        id: "wiz-news",
-        path: "wizpark/parking",
+        id: 2,
+        path: "/wizpark/parking",
         title: "주차 예약",
-        descript: "kt wiz의 새소식을 발빠르게 전해 드립니다.",
+        description: "kt wiz의 새소식을 발빠르게 전해 드립니다.",
       },
       {
-        id: "wiz-news",
-        path: "wizpark/location",
+        id: 3,
+        path: "/wizpark/location",
         title: "찾아오기",
-        descript: "kt wiz의 새소식을 발빠르게 전해 드립니다.",
+        description: "오시는 길을 상세하게 알려드립니다.",
       },
       {
-        id: "wiz-news",
-        path: "wizpark/iksan",
+        id: 4,
+        path: "/wizpark/iksan",
         title: "익산야구장",
-        descript: "kt wiz의 새소식을 발빠르게 전해 드립니다.",
+        description: "kt wiz의 둥지 '익산야구장'을 소개합니다.",
       },
     ],
   },
@@ -70,10 +70,10 @@ export const UNIFIED_MENU = {
     subMenus: ["정규리그", "퓨처스리그"],
     items: [
       {
-        id: "wiz-news",
-        path: "game/league/boxscore", // 기본 url 경로로 셋팅
+        id: 1,
+        path: "/game/league/schedule", // 기본 url 경로로 셋팅
         title: "정규리그",
-        descript: "kt wiz의 새소식을 발빠르게 전해 드립니다.",
+        description: "kt wiz의 정규리그 경기 일정을 알려 드립니다.",
       },
     ],
   },
@@ -82,28 +82,28 @@ export const UNIFIED_MENU = {
     subMenus: ["코칭스텝", "투수", "타자", "응원"],
     items: [
       {
-        id: "wiz-news",
-        path: "player/coach",
+        id: 1,
+        path: "/player/coach",
         title: "코칭스텝",
-        descript: "kt wiz의 새소식을 발빠르게 전해 드립니다.",
+        description: "최고의 kt wiz 코칭스탭을 소개합니다.",
       },
       {
-        id: "wiz-news",
-        path: "player/pitcher",
+        id: 2,
+        path: "/player/pitcher",
         title: "투수",
-        descript: "kt wiz의 새소식을 발빠르게 전해 드립니다.",
+        description: "kt wiz의 자랑스런 ‘첫 번째 선수단’을 소개합니다.",
       },
       {
-        id: "wiz-news",
-        path: "player/hitter/catcher",
+        id: 3,
+        path: "/player/hitter/catcher",
         title: "타자/포수",
-        descript: "kt wiz의 새소식을 발빠르게 전해 드립니다.",
+        description: "kt wiz의 자랑스런 ‘첫 번째 선수단’을 소개합니다.",
       },
       {
-        id: "wiz-news",
-        path: "player/cheer/cheering",
+        id: 4,
+        path: "/player/cheer/cheering",
         title: "응원/응원단",
-        descript: "kt wiz의 새소식을 발빠르게 전해 드립니다.",
+        description: "kt wiz꽃! kt wiz의 응원단",
       },
     ],
   },
@@ -112,28 +112,28 @@ export const UNIFIED_MENU = {
     subMenus: ["wiz 뉴스", "wiz 스토리", "시구자 정보", "하이라이트"],
     items: [
       {
-        id: "wiz-news",
-        path: "media/news",
+        id: 1,
+        path: "/media/news",
         title: "wiz 뉴스",
-        descript: "kt wiz의 새소식을 발빠르게 전해 드립니다.",
+        description: "kt wiz의 새소식을 발빠르게 전해 드립니다.",
       },
       {
-        id: "wiz-story",
-        path: "media/story",
+        id: 2,
+        path: "/media/story",
         title: "wiz 스토리",
-        descript: "kt wiz 팬이 전하는 생생한 스토리를 만나보세요.",
+        description: "kt wiz 팬이 전하는 생생한 스토리를 만나보세요.",
       },
       {
-        id: "pitchman-info",
-        path: "media/guest",
+        id: 3,
+        path: "/media/guest",
         title: "시구자 정보",
-        descript: "경기의 또다른 하이라이트 시구자 정보를 안내해 드립니다.",
+        description: "경기의 또다른 하이라이트 시구자 정보를 안내해 드립니다.",
       },
       {
-        id: "highlights",
-        path: "media/highlight",
+        id: 4,
+        path: "/media/highlight",
         title: "하이라이트",
-        descript: "생생한 경기 하이라이트를 담았습니다.",
+        description: "생생한 경기 하이라이트를 담았습니다.",
       },
     ],
   },
@@ -172,3 +172,25 @@ export const SubMenuInfo: MenuInfoType = Object.entries(UNIFIED_MENU).reduce(
   },
   {} as MenuInfoType
 );
+
+// 카테고리 메뉴 정보
+export const CategoryMenus = {
+  player: {
+    hitter: [
+      { path: "/player/hitter/catcher", title: "포수" },
+      { path: "/player/hitter/infielder", title: "내야수" },
+      { path: "/player/hitter/outfielder", title: "외야수" },
+    ],
+    cheer: [
+      { path: "/player/cheer/cheering", title: "응원단" },
+      { path: "/player/cheer/copyright", title: "저작권" },
+      { path: "/player/cheer/song", title: "응원가" },
+    ],
+  },
+  game: {
+    league: [
+      { path: "/game/league/schedule", title: "경기일정" },
+      { path: "/game/league/boxscore", title: "박스스코어" },
+    ],
+  },
+};

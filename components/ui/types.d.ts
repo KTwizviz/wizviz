@@ -14,6 +14,6 @@ type CarouselImage = {
   key: number;
 };
 
-type CarouselProps = {
+type CustomCarouselProps = {
   images: CarouselImage[];
 };

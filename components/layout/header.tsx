@@ -1,6 +1,6 @@
 "use client";
 
-import wizLogo from "@/assets/images/logo_ktwiz_en.svg";
+import { ktwiz_en } from "@/assets/images/@index";
 import Image from "next/image";
 import { MainMenuItems } from "@/constants/header-menu";
 import HeaderRightMenu from "./headerRightMenu";
@@ -41,10 +41,10 @@ const Header = () => {
             <div className="flex items-center justify-between h-20">
               {/* 로고 */}
               <Image
-                src={wizLogo}
+                src={ktwiz_en}
                 alt="wiz_logo"
-                width={90}
-                height={90}
+                width={89}
+                height={42}
                 className="cursor-pointer"
                 onClick={() => router.push("/")}
               />

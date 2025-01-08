@@ -1,14 +1,24 @@
+'use client'
+
 import KakaoMap from "@/components/common/Map";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui";
+import Carousel from "@/components/ui/custom-carousel";
 import { BusRouteInfo } from "@/components/wizpark/iksan/bus-route-info";
-import { IKSAN_LOCATION } from "@/constants/stadium-location";
-import { Bus, ExternalLink, Map, MapPin } from "lucide-react";
+import { IKSAN_IMAGES, IKSAN_LOCATION } from "@/constants/stadium";
+import { Bus, ExternalLink, Images, Map, MapPin } from "lucide-react";
 import Link from "next/link";
 import Script from "next/script";
 
 export default function page() {
   return (
     <div>
+      <CardHeader>
+        <CardTitle className="flex items-center">
+          <Images className="mr-2" />
+          사진
+        </CardTitle>
+      </CardHeader>
+      <Carousel images={IKSAN_IMAGES} />
       <Script
         strategy="beforeInteractive"
         src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_KAKAO_API_KEY}&libraries=services&autoload=false`}

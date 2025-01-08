@@ -3,7 +3,7 @@ import KakaoMap from "@/components/common/Map";
 import { Bus, ExternalLink, Map, MapPin, MoveRight, Train } from "lucide-react";
 import Link from "next/link";
 import Script from "next/script";
-import { SUWON_LOCATION } from "@/constants/stadium-location";
+import { SUWON_LOCATION } from "@/constants/stadium";
 
 export default function page() {
 

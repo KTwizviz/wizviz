@@ -9,7 +9,7 @@ export { default as logo_LG } from "./logo_LG.png";
 export { default as logo_LT } from "./logo_LT.png";
 export { default as logo_NC } from "./logo_NC.png";
 export { default as logo_OB } from "./logo_OB.png";
-export { default as logo_SK } from "./logo_SK.png";
+export { default as logo_SSG } from "./logo_SSG.png";
 export { default as logo_SS } from "./logo_SS.png";
 export { default as logo_WO } from "./logo_WO.png";
 export { default as logo_ktwports } from "./logo_ktsports.png";

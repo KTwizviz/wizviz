@@ -8,8 +8,8 @@ const MainRecord = ({ etcgames }: { etcgames: MainRecords[] }) => {
       <Card className="pt-6">
         <CardContent>
           <ul className="space-y-4">
-            {etcgames.map((item) => (
-              <li>
+            {etcgames.map((item, index) => (
+              <li key={index}>
                 <span className="bg-ELSE-DE text-ELSE-49 rounded-md px-2 py-0.5 mr-2 text-l">
                   {item.how}
                 </span>

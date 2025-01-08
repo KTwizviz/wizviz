@@ -47,7 +47,7 @@ const ScoreBoard = ({ scoreboard }: ScoreBoardProps) => {
           </tr>
         </thead>
         <tbody>
-          {scoreboard.map((team, index) => {
+          {scoreboard.map((team) => {
             const inningScores = headers.map((h) => {
               const key = `score${h}` as keyof Scoreboard;
               return team[key];

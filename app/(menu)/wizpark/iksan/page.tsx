@@ -12,13 +12,26 @@ import Script from "next/script";
 export default function page() {
   return (
     <div>
-      <CardHeader>
-        <CardTitle className="flex items-center">
-          <Images className="mr-2" />
-          사진
-        </CardTitle>
-      </CardHeader>
-      <Carousel images={IKSAN_IMAGES} />
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center">
+            <Images className="mr-2" />
+            사진
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <Carousel images={IKSAN_IMAGES} />
+          <div className="flex justify-self-center">
+            <span className="bg-ELSE-DE text-ELSE-33 rounded-md px-2 py-0.5 m-1">(규격) 좌우 98m, 중앙 121m</span>
+            <span className="bg-ELSE-DE text-ELSE-33 rounded-md px-2 py-0.5 m-1">(관람석) 740석</span>
+            <span className="bg-ELSE-DE text-ELSE-33 rounded-md px-2 py-0.5 m-1">(본부석) 덕아웃</span>
+            <span className="bg-ELSE-DE text-ELSE-33 rounded-md px-2 py-0.5 m-1">(전광판) 전자식</span>
+            <span className="bg-ELSE-DE text-ELSE-33 rounded-md px-2 py-0.5 m-1">(전자식) 고정식</span>
+            <span className="bg-ELSE-DE text-ELSE-33 rounded-md px-2 py-0.5 m-1">(건립) 2011년 6월</span>
+            <span className="bg-ELSE-DE text-ELSE-33 rounded-md px-2 py-0.5 m-1">(그라운드) 인조잔디</span>
+          </div>
+        </CardContent>
+      </Card>
       <Script
         strategy="beforeInteractive"
         src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_KAKAO_API_KEY}&libraries=services&autoload=false`}

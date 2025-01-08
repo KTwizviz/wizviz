@@ -43,29 +43,24 @@ const Carousel = ({ images }: CustomCarouselProps) => {
           {getVisibleImages().map((image, index) => (
             <div
               key={image.key}
-              className={`absolute transition-all duration-700 ease-in-out ${index === 0
-                ? "-translate-x-[130%] z-10 opacity-30"
-                : index === 1
+              className={`absolute transition-all duration-700 ease-in-out ${
+                index === 0
+                  ? "-translate-x-[130%] z-10 opacity-30"
+                  : index === 1
                   ? "-translate-x-[90%] z-20 opacity-70"
                   : index === 2
-                    ? "translate-x-0 z-30 transform scale-100"
-                    : index === 3
-                      ? "translate-x-[90%] z-20 opacity-70"
-                      : "translate-x-[130%] z-10 opacity-30"
-                }`}
+                  ? "translate-x-0 z-30 transform scale-100"
+                  : index === 3
+                  ? "translate-x-[90%] z-20 opacity-70"
+                  : "translate-x-[130%] z-10 opacity-30"
+              }`}
             >
               <div
-                className={`${index === 2
-                  ? "shadow-2xl w-[400px] h-[400px] cursor-pointer"
-                  : "w-[300px] h-[300px]"
-                  } rounded-xl overflow-hidden transition-shadow duration-800 relative`}
-                onClick={
+                className={`${
                   index === 2
-                    ? () => {
-                      console.log("사진 페이지로 이동");
-                    }
-                    : undefined
-                }
+                    ? "shadow-2xl w-[400px] h-[400px]"
+                    : "w-[300px] h-[300px]"
+                } rounded-xl overflow-hidden transition-shadow duration-800 relative`}
               >
                 <Image
                   src={image.img}

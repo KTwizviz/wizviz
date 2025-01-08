@@ -8,11 +8,13 @@ const IconButton = ({
   iconSize,
   text,
   onClick,
+  disabled,
   className,
 }: IconButtonProps) => {
   return (
     <button
       onClick={onClick}
+      disabled={disabled}
       className={twMerge(
         "p-2.5 rounded-md h-fit",
         circle && "rounded-full",

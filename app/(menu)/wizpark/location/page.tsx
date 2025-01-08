@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui";
 import KakaoMap from "@/components/common/Map";
-import { Bus, ExternalLink, MapPin, MoveRight, Train } from "lucide-react";
+import { Bus, ExternalLink, Map, MapPin, MoveRight, Train } from "lucide-react";
 import Link from "next/link";
 import Script from "next/script";
 import { SUWON_LOCATION } from "@/constants/wizpark-location";
@@ -9,11 +9,17 @@ export default function page() {
 
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div>
       <Script
         strategy="beforeInteractive"
         src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_KAKAO_API_KEY}&libraries=services&autoload=false`}
       />
+      <CardHeader>
+        <CardTitle className="flex items-center">
+          <Map className="mr-2" />
+          지도
+        </CardTitle>
+      </CardHeader>
       <KakaoMap location={SUWON_LOCATION} />
       <div className="space-y-6">
         <Card>

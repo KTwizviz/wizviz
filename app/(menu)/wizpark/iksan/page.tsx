@@ -2,7 +2,7 @@ import KakaoMap from "@/components/common/Map";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui";
 import { BusRouteInfo } from "@/components/wizpark/iksan/bus-route-info";
 import { IKSAN_LOCATION } from "@/constants/stadium-location";
-import { Bus, ExternalLink, Map, MapPin, MoveRight, Train } from "lucide-react";
+import { Bus, ExternalLink, Map, MapPin } from "lucide-react";
 import Link from "next/link";
 import Script from "next/script";
 

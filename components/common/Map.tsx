@@ -1,6 +1,5 @@
 'use client'
 
-import { LAT, LNG } from "@/constants/wizpark-location";
 import React, { useEffect, useRef } from "react";
 
 declare global {
@@ -10,14 +9,14 @@ declare global {
   }
 }
 
-const KakaoMap = () => {
+const KakaoMap = ({ location }: { location: number[] }) => {
   const mapRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (window.kakao && mapRef.current) {
       window.kakao.maps.load(() => {
         const mapOption = {
-          center: new window.kakao.maps.LatLng(LAT, LNG),
+          center: new window.kakao.maps.LatLng(location[0], location[1]),
           level: 3,
           draggable: true,
           scrollwheel: true,

@@ -30,6 +30,7 @@ export const COLORS = {
     DE: "#DEDEDE",
     C8: "#00C866",
     F87: "#F87171",
+    808: "#080808",
   },
   FOOTER: {
     main: "#0098AF",

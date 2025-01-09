@@ -1,3 +1,9 @@
-export default function page() {
-  return <div>page입니다</div>;
+import BoxscoreContainer from "@/components/game/boxscore/boxscore-container";
+
+export default function BoxscorePage() {
+  return (
+    <div className="w-[1100px]">
+      <BoxscoreContainer />
+    </div>
+  );
 }

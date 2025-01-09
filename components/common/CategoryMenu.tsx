@@ -21,6 +21,8 @@ const CategoryMenu = () => {
             src={submenuBg}
             alt="Submenu background"
             fill
+            quality={100}
+            sizes="100vw"
             className="absolute inset-0 object-cover"
           />
           <div className="text-center text-white p-8 max-w-3xl relative z-10">

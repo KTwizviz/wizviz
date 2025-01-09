@@ -3,7 +3,7 @@ type ScoreBoardProps = {
 };
 
 const ScoreBoard = ({ scoreboard }: ScoreBoardProps) => {
-  const headers = Array.from({ length: 15 }, (_, i) => (i + 1).toString());
+  const headers = Array.from({ length: 12 }, (_, i) => (i + 1).toString());
   const summaryHeaders = ["R", "H", "E", "B"];
 
   const ScoreBoardSkeleton = () => {
@@ -31,7 +31,7 @@ const ScoreBoard = ({ scoreboard }: ScoreBoardProps) => {
             {headers.map((header) => (
               <th
                 key={header}
-                className="px-3 py-2 bg-red-600 font-normal text-white border border-gray-300 w-8"
+                className="w-10 px-3 py-2 bg-red-600 font-normal text-white border border-gray-300"
               >
                 {header}
               </th>
@@ -39,7 +39,7 @@ const ScoreBoard = ({ scoreboard }: ScoreBoardProps) => {
             {summaryHeaders.map((header) => (
               <th
                 key={header}
-                className="px-3 py-2 bg-red-600 font-normal text-white border border-gray-300 w-8"
+                className="w-10 px-3 py-2 bg-red-600 font-normal text-white border border-gray-300"
               >
                 {header}
               </th>

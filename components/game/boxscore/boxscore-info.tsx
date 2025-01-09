@@ -62,7 +62,7 @@ const BoxscoreInfo = ({
           onClick={() => handleClick("next")}
         />
       </div>
-      <div className="flex flex-1 justify-between w-full">
+      <div className="flex w-full justify-center">
         <TeamScore
           team={currentSchedule.visit as Team}
           score={currentSchedule.vscore}

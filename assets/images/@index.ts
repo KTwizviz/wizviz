@@ -45,3 +45,12 @@ export { default as Parking_img } from "./parking_img.png";
 
 export { default as policy_img } from "./policy_img.jpg";
 
+export { default as iksan_stadium1 } from "./iksan_stadium1.jpeg";
+export { default as iksan_stadium2 } from "./iksan_stadium2.jpeg";
+export { default as iksan_stadium3 } from "./iksan_stadium3.png";
+export { default as iksan_stadium4 } from "./iksan_stadium4.png";
+export { default as iksan_stadium5 } from "./iksan_stadium5.png";
+export { default as iksan_stadium6 } from "./iksan_stadium6.png";
+export { default as iksan_stadium7 } from "./iksan_stadium7.png";
+export { default as iksan_stadium8 } from "./iksan_stadium8.png";
+export { default as iksan_stadium9 } from "./iksan_stadium9.png";

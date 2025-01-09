@@ -40,11 +40,24 @@ export { default as CarouselImage7 } from "./gallery7.jpeg";
 export { default as CarouselImage8 } from "./gallery8.jpeg";
 export { default as CarouselImage9 } from "./gallery9.jpeg";
 export { default as CarouselImage10 } from "./gallery10.jpeg";
-
 export { default as Parking_img } from "./parking_img.png";
-
 export { default as policy_img } from "./policy_img.jpg";
-
+export { default as Sponsor_bccard_img } from "./sponsor_bccard.gif";
+export { default as Sponsor_daishin_img } from "./sponsor_daishin.png";
+export { default as Sponsor_newbalance_img } from "./sponsor_newbalance.png";
+export { default as Sponsor_suwon_img } from "./sponsor_suwon.jpg";
+export { default as Sponsor_usana_img } from "./sponsor_usana.png";
+export { default as Sponsor_oksavingsbank_img } from "./sponsor_oksavingsbank.jpg";
+export { default as Sponsor_ktestate_img } from "./sponsor_ktestate.jpg";
+export { default as Sponsor_panasonic_img } from "./sponsor_panasonic.jpg";
+export { default as Sponsor_dongsuh_img } from "./sponsor_dongsuh.png";
+export { default as Sponsor_nongshim_img } from "./sponsor_nongshim.jpg";
+export { default as Sponsor_samsung_img } from "./sponsor_samsung.jpg";
+export { default as Sponsor_ticketlink_img } from "./sponsor_ticketlink.gif";
+export { default as Sponsor_dorco_img } from "./sponsor_dorco.png";
+export { default as Sponsor_sangsangin_img } from "./sponsor_sangsangin.jpg";
+export { default as Sponsor_tirebank_img } from "./sponsor_tirebank.png";
+export { default as Sponsor_onface_img } from "./sponsor_onface.jpg";
 export { default as iksan_stadium1 } from "./iksan_stadium1.jpeg";
 export { default as iksan_stadium2 } from "./iksan_stadium2.jpeg";
 export { default as iksan_stadium3 } from "./iksan_stadium3.png";

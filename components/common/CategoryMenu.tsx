@@ -34,7 +34,7 @@ const CategoryMenu = () => {
         </div>
         {categoryMenus.length > 0 && (
           <div className="absolute bottom-0 left-0 right-0 transform translate-y-1/2">
-            <div className="max-w-2xl mx-auto bg-[#080808] rounded-2xl shadow-2xl">
+            <div className="max-w-2xl mx-auto bg-ELSE-808 rounded-2xl shadow-2xl">
               <div className="flex justify-around p-2 items-center text-SYSTEM-white">
                 {categoryMenus.map((menu) => (
                   <Link

@@ -36,17 +36,16 @@ const CategoryMenu = () => {
         </div>
         {categoryMenus.length > 0 && (
           <div className="absolute bottom-0 left-0 right-0 transform translate-y-1/2">
-            <div className="max-w-2xl mx-auto bg-SYSTEM-white rounded-lg shadow-lg">
-              <div className="flex justify-around p-4 items-center">
+            <div className="max-w-2xl mx-auto bg-ELSE-808 rounded-2xl shadow-2xl">
+              <div className="flex justify-around p-2 items-center text-SYSTEM-white">
                 {categoryMenus.map((menu) => (
                   <Link
                     key={menu.path}
                     href={menu.path}
                     className={`flex items-center px-4 py-2 rounded-lg transition-all duration-300
-                      ${
-                        pathname === menu.path
-                          ? "bg-SYSTEM-white text-ELSE-CC6"
-                          : "text-ELSE-49 hover:bg-ELSE-DE"
+                      ${pathname === menu.path
+                        ? "text-ELSE-CC6"
+                        : "hover:text-ELSE-CC6 hover:translate-y-[-1px]"
                       }`}
                   >
                     <span className="text-sm font-medium">{menu.title}</span>

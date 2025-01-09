@@ -31,6 +31,7 @@ export const COLORS = {
     C8: "#00C866",
     F87: "#F87171",
     F8: "#f8f8f8",
+    808: "#080808",
   },
   FOOTER: {
     main: "#0098AF",

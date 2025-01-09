@@ -3,3 +3,4 @@ export type CoachResponse = {
     list: CoachInfo[];
   };
 };
+export type PitcherResponse = PitcherInfo[];

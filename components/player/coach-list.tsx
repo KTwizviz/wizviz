@@ -1,5 +1,5 @@
 import { getCoachList } from "@/api/player/apis";
-import CoachCard from "./coach-card";
+import PlayerCard from "./player-card";
 
 export async function CoachList() {
   const coachList = await getCoachList();
@@ -7,7 +7,7 @@ export async function CoachList() {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
       {coachList.map((coach) => (
-        <CoachCard
+        <PlayerCard
           key={coach.backnum}
           image={coach.mobilePlayerImg1}
           name={coach.playerName}

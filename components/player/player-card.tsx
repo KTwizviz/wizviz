@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const CoachCard = ({ image, name, backnum }: CoachCardProps) => {
+const PlayerCard = ({ image, name, backnum }: CoachCardProps) => {
   return (
     <div className="rounded-lg shadow-md overflow-hidden">
       <div className="relative w-full h-48">
@@ -21,4 +21,4 @@ const CoachCard = ({ image, name, backnum }: CoachCardProps) => {
   );
 };
 
-export default CoachCard;
+export default PlayerCard;

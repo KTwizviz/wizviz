@@ -4,6 +4,7 @@ type IconButtonProps = {
   circle?: boolean;
   iconSize?: number;
   text?: string;
+  disabled?: boolean;
   className?: string;
   onClick: () => void;
 };

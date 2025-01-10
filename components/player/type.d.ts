@@ -43,3 +43,11 @@ type PitcherInfo = {
   rankName: string; // 순위 이름
   teamName: string; // 팀 이름
 };
+
+type CoachListProps = {
+  data: CoachInfo[];
+};
+
+type PitchListProps = {
+  data: PitcherInfo[];
+};

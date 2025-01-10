@@ -5,7 +5,6 @@ const BASE_URL = process.env.NEXT_PUBLIC_API_KEY;
 // player - 코치 리스트
 export const getCoachList = async (): Promise<CoachInfo[]> => {
   const url = `${BASE_URL}/player/coachlist`;
-  console.log(url, "나 유알엘엘에레엘엘에렝ㄹ");
   const res = await fetch(url);
 
   if (!res.ok) {

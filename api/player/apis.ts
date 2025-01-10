@@ -4,7 +4,7 @@ const BASE_URL = process.env.NEXT_PUBLIC_API_KEY;
 
 // player - 코치 리스트
 export const getCoachList = async (): Promise<CoachInfo[]> => {
-  const url = `${BASE_URL}/player/coachlist`;
+  const url = `${BASE_URL}/player/coach`;
   const res = await fetch(url, { method: "GET" });
 
   if (!res.ok) {

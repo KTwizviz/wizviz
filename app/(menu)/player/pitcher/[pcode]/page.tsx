@@ -1,5 +1,3 @@
-import { CoachDetail } from "@/components/player/coach-detail";
-
 export default async function Page() {
   return (
     <>

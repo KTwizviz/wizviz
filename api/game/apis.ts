@@ -39,7 +39,7 @@ export async function getAllSchedules(params: string) {
 export async function getTeamRelativeRecord() {
   try {
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_API_KEY}/game/rank/teamvs`,
+      `${BASE_URL}/game/rank/teamvs`,
     );
 
     if (!res.ok) {

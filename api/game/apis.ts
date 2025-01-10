@@ -1,35 +1,58 @@
+const BASE_URL = process.env.NEXT_PUBLIC_API_KEY;
+
 export async function getMonthSchedules(params: string) {
   try {
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_API_KEY}/game/monthschedule?yearMonth=${params}`,
+      `${BASE_URL}/game/monthschedule?yearMonth=${params}`
     );
 
     if (!res.ok) {
-      throw new Error('네트워크 문제 발생');
-    };
+      throw new Error("네트워크 문제 발생");
+    }
 
     const data = await res.json();
 
     return data;
   } catch (error) {
-    console.error('API 요청 에러:', error);
+    console.error("API 요청 에러:", error);
   }
 }
 
 export async function getAllSchedules(params: string) {
   try {
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_API_KEY}/game/allgameschedule?yearMonth=${params}`,
+      `${BASE_URL}/game/allgameschedule?yearMonth=${params}`
     );
 
     if (!res.ok) {
-      throw new Error('네트워크 문제 발생');
-    };
+      throw new Error("네트워크 문제 발생");
+    }
 
     const data = await res.json();
 
     return data;
   } catch (error) {
-    console.error('API 요청 에러:', error);
+    console.error("API 요청 에러:", error);
   }
 }
+
+export const fetchBoxscore = async (gameDate?: number, gmkey?: string) => {
+  try {
+    const queryparams =
+      gameDate && gmkey ? `?gameDate=${gameDate}&gmkey=${gmkey}` : "";
+
+    const URL = `${BASE_URL}/game/boxscore${queryparams}`;
+
+    const response = await fetch(URL);
+
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+
+    const result = await response.json();
+    return result.data;
+  } catch (error) {
+    console.error("API 요청 에러:", error);
+    throw error;
+  }
+};

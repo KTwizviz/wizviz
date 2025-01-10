@@ -3,7 +3,7 @@ import { teamLogos } from "@/constants/team-logos";
 
 const TeamScore = (props: TeamScoreProps) => {
   return (
-    <div className="px-10 align-middle justify-items-center space-y-3">
+    <div className="px-12 align-middle justify-items-center space-y-3">
       <p className="text-sm">{props.homeGround ? "Home" : "Away"}</p>
       <Image
         src={teamLogos[props.team]}

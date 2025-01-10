@@ -2,6 +2,7 @@ type CoachCardProps = {
   image: string;
   name: string;
   backnum: number;
+  pcode: string;
 };
 type CoachInfo = {
   backnum: string;
@@ -31,7 +32,7 @@ type PitcherInfo = {
   energybarName: string; // 에너지 바 이름
   gyear: string; // 연도
   hasFanpage: "Y" | "N"; // 팬페이지 존재 여부
-  hittype: string; // 타격 타입 (우투우타 등)
+  hittype: string; // 타격 타입
   mobilePlayerImg: string; // 선수 이미지 1 (URL)
   mobilePlayerImg1: string; // 선수 이미지 2 (URL)
   mobilePlayerImg2: string; // 선수 이미지 3 (URL)
@@ -50,4 +51,32 @@ type CoachListProps = {
 
 type PitchListProps = {
   data: PitcherInfo[];
+};
+
+type CoachDetailInfo = {
+  coachstep: {
+    backnum: string;
+    birth: string;
+    career: string;
+    career2: string;
+    engName: string;
+    gyear: string;
+    height: string;
+    heightWeight: string;
+    hittype: string;
+    mobilePlayerImg1: string;
+    mobilePlayerImg2: string;
+    pcode: string;
+    playerName: string;
+    playerPrvwImg: string;
+    playerPrvwImg2: string;
+    playerPrvwImg3: string;
+    position: string;
+    teamCode: string;
+    teamName: string;
+    weight: string;
+  };
+};
+type CoachDetailProps = {
+  data: CoachDetailInfo;
 };

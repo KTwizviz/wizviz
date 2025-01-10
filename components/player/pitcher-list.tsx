@@ -6,6 +6,7 @@ export function PitcherList({ data }: PitchListProps) {
       {data.map((pitcher) => (
         <PlayerCard
           key={pitcher.backnum}
+          pcode={pitcher.pcode}
           image={pitcher.mobilePlayerImg2}
           name={pitcher.playerName}
           backnum={parseInt(pitcher.backnum)}

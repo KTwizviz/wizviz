@@ -1,8 +1,18 @@
+"use client";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
-const PlayerCard = ({ image, name, backnum }: CoachCardProps) => {
+const PlayerCard = ({ image, name, backnum, pcode }: CoachCardProps) => {
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push(`/player/coach/${pcode}`); // 코치 상세 페이지로 이동
+  };
   return (
-    <div className="rounded-lg shadow-md overflow-hidden">
+    <div
+      className="rounded-lg shadow-md overflow-hidden cursor-pointer hover:opacity-80 transition-opacity"
+      onClick={handleClick}
+    >
       <div className="relative w-full h-48">
         <Image
           src={image}

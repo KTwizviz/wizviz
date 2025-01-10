@@ -3,6 +3,7 @@ import "../css/index.css";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import { Noto_Sans_KR } from "next/font/google";
+import QueryProviders from "@/providers/query-provider";
 
 const notoSansKr = Noto_Sans_KR({
   subsets: ["latin"],
@@ -27,7 +28,9 @@ export default function RootLayout({
       <body className={notoSansKr.className}>
         <div className="flex flex-col min-h-screen">
           <Header />
-          <main className="flex-1">{children}</main>
+          <main className="flex-1">
+            <QueryProviders>{children}</QueryProviders>
+          </main>
           <Footer />
         </div>
       </body>

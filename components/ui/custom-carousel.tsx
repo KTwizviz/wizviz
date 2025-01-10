@@ -3,7 +3,7 @@ import Image from "next/image";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import IconButton from "./icon-button";
 
-const Carousel = ({ images }: CarouselProps) => {
+const Carousel = ({ images }: CustomCarouselProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const getVisibleImages = useCallback(() => {
@@ -58,16 +58,9 @@ const Carousel = ({ images }: CarouselProps) => {
               <div
                 className={`${
                   index === 2
-                    ? "shadow-2xl w-[400px] h-[400px] cursor-pointer"
+                    ? "shadow-2xl w-[400px] h-[400px]"
                     : "w-[300px] h-[300px]"
                 } rounded-xl overflow-hidden transition-shadow duration-800 relative`}
-                onClick={
-                  index === 2
-                    ? () => {
-                        console.log("사진 페이지로 이동");
-                      }
-                    : undefined
-                }
               >
                 <Image
                   src={image.img}

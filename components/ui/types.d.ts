@@ -4,6 +4,7 @@ type IconButtonProps = {
   circle?: boolean;
   iconSize?: number;
   text?: string;
+  disabled?: boolean;
   className?: string;
   onClick: () => void;
 };
@@ -13,6 +14,6 @@ type CarouselImage = {
   key: number;
 };
 
-type CarouselProps = {
+type CustomCarouselProps = {
   images: CarouselImage[];
 };

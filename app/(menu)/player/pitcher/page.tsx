@@ -1,3 +1,11 @@
-export default function page() {
-  return <div>page입니다</div>;
+import { getPitcherList } from "@/api/player/apis";
+import PitcherList from "@/components/player/pitcher-list";
+export const dynamic = "force-dynamic";
+export default async function page() {
+  const pitcherList = await getPitcherList();
+  return (
+    <>
+      <PitcherList data={pitcherList} />
+    </>
+  );
 }

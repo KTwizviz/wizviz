@@ -21,11 +21,12 @@ type MainMenuItems = {
   sponsor: string[];
 };
 type MenuInfoItem = {
-  id: string | number;
+  id: number;
   path: string;
   title: string;
-  descript: string;
+  description: string;
 };
+
 type UnifiedMenuCategory = {
   key: string;
   subMenus: string[];

@@ -11,7 +11,7 @@ const HeaderDropMenu = () => {
     );
 
     if (menuItem) {
-      return `/${menuItem.path}`;
+      return `${menuItem.path}`;
     }
     return "#";
   };

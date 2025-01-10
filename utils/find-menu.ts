@@ -29,6 +29,7 @@ export const findCategoryMenus = (
     return [
       { path: "/game/league/schedule", title: "경기일정" },
       { path: "/game/league/boxscore", title: "박스스코어" },
+      { path: "/game/league/watchpoint", title: "관전포인트" },
     ];
   }
 

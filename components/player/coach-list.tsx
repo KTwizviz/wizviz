@@ -10,6 +10,7 @@ export function CoachList({ data }: CoachListProps) {
           image={coach.mobilePlayerImg1}
           name={coach.playerName}
           backnum={parseInt(coach.backnum)}
+          pathname="coach"
         />
       ))}
     </div>

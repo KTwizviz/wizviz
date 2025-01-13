@@ -10,6 +10,7 @@ export function PitcherList({ data }: PitchListProps) {
           image={pitcher.mobilePlayerImg2}
           name={pitcher.playerName}
           backnum={parseInt(pitcher.backnum)}
+          pathname="pitcher"
         />
       ))}
     </div>

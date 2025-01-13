@@ -1,4 +1,4 @@
-import PlayerCard from "./player-card";
+import PlayerCard from "../player-card";
 
 export function CoachList({ data }: CoachListProps) {
   return (

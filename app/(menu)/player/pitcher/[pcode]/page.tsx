@@ -1,5 +1,5 @@
 import { getPitcherDetail } from "@/api/player/apis";
-import { PitcherDetail } from "@/components/player/pitcher-detail";
+import { PitcherDetail } from "@/components/player/pitcher/pitcher-detail";
 
 export default async function Page({
   params,

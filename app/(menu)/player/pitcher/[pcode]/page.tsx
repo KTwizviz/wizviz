@@ -1,8 +1,18 @@
-export default async function Page() {
+import { getPitcherDetail } from "@/api/player/apis";
+import { PitcherDetail } from "@/components/player/pitcher-detail";
+
+export default async function Page({
+  params,
+}: {
+  params: {
+    pcode: string;
+  };
+}) {
+  const { pcode } = params;
+  const data = await getPitcherDetail(pcode);
   return (
     <>
-      <div>투수 디테일 페이지</div>
-      {/* <CoachDetail /> */}
+      <PitcherDetail data={data} />
     </>
   );
 }

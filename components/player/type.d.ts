@@ -25,6 +25,7 @@ type CoachCardProps = {
   name: string;
   backnum: number;
   pcode: string;
+  pathname: string;
 };
 
 // 코치 목록정보
@@ -178,14 +179,12 @@ type PitcherYearRecord = BaseSeasonRecord & {
 
 // 투수 상세 정보 데이터 구조
 type PitcherDetailInfo = {
-  data: {
-    gameplayer: PitcherPersonalInfo;
-    recentgamerecordlist: PitcherGameRecord[];
-    recentgamerecordlistfutures: PitcherGameRecord[];
-    seasonsummary: PitcherSeasonSummary;
-    seasonsummaryfutures: PitcherSeasonSummary;
-    yearrecordlist: PitcherYearRecord[];
-  };
+  gameplayer: PitcherPersonalInfo;
+  recentgamerecordlist: PitcherGameRecord[];
+  recentgamerecordlistfutures: PitcherGameRecord[];
+  seasonsummary: PitcherSeasonSummary;
+  seasonsummaryfutures: PitcherSeasonSummary;
+  yearrecordlist: PitcherYearRecord[];
 };
 
 type PitchListProps = {

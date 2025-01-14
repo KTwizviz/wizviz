@@ -36,14 +36,15 @@ export async function getAllSchedules(params: string) {
   }
 }
 
-export const fetchBoxscore = async (gameDate?: number, gmkey?: string) => {
+export const getBoxscore = async (queryparams: string): Promise<GetBoxscore> => {
   try {
-    const queryparams =
-      gameDate && gmkey ? `?gameDate=${gameDate}&gmkey=${gmkey}` : "";
-
     const URL = `${BASE_URL}/game/boxscore${queryparams}`;
 
-    const response = await fetch(URL);
+    const response = await fetch(URL, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
 
     if (!response.ok) {
       throw new Error("Network response was not ok");

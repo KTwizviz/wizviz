@@ -12,8 +12,8 @@ const BoxscoreContainer = () => {
     gameDate?: number;
     gmkey?: string;
   }>({
-    gameDate: undefined,
-    gmkey: "",
+    gameDate: 20241011,
+    gmkey: "33331011KTLG0",
   });
 
   const { data, isLoading } = useBoxscore(apiKey.gameDate, apiKey.gmkey);

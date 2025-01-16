@@ -68,3 +68,4 @@ export { default as iksan_stadium8 } from "./iksan_stadium8.png";
 export { default as iksan_stadium9 } from "./iksan_stadium9.png";
 export { default as ranking_score } from "./ranking_score.png";
 export { default as parking_banner } from "./parking_banner.png";
+export { default as wallpaper_img } from "./wallpaper_img.png";

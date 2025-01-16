@@ -68,3 +68,5 @@ export { default as iksan_stadium6 } from "./iksan_stadium6.png";
 export { default as iksan_stadium7 } from "./iksan_stadium7.png";
 export { default as iksan_stadium8 } from "./iksan_stadium8.png";
 export { default as iksan_stadium9 } from "./iksan_stadium9.png";
+
+export { default as wallpaper_img } from "./wallpaper_img.png";

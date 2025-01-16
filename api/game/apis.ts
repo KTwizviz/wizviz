@@ -1,9 +1,7 @@
-const BASE_URL = process.env.NEXT_PUBLIC_API_KEY;
-
 export async function getMonthSchedules(params: string) {
   try {
     const res = await fetch(
-      `${BASE_URL}/game/monthschedule?yearMonth=${params}`
+      `/game/monthschedule?yearMonth=${params}`
     );
 
     if (!res.ok) {
@@ -21,7 +19,7 @@ export async function getMonthSchedules(params: string) {
 export async function getAllSchedules(params: string) {
   try {
     const res = await fetch(
-      `${BASE_URL}/game/allgameschedule?yearMonth=${params}`
+      `/game/allgameschedule?yearMonth=${params}`
     );
 
     if (!res.ok) {
@@ -41,7 +39,7 @@ export const fetchBoxscore = async (gameDate?: number, gmkey?: string) => {
     const queryparams =
       gameDate && gmkey ? `?gameDate=${gameDate}&gmkey=${gmkey}` : "";
 
-    const URL = `${BASE_URL}/game/boxscore${queryparams}`;
+    const URL = `/game/boxscore${queryparams}`;
 
     const response = await fetch(URL);
 

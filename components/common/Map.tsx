@@ -43,7 +43,7 @@ const KakaoMap = ({ location }: { location: number[] }) => {
         map.addControl(mapTypeControl, window.kakao.maps.ControlPosition.TOPRIGHT);
       });
     }
-  }, [])
+  }, [location])
 
   return (
     <div className="flex justify-center">

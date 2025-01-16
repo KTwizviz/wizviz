@@ -1,7 +1,7 @@
 export async function getMonthSchedules(params: string) {
   try {
     const res = await fetch(
-      `/game/monthschedule?yearMonth=${params}`
+      `/api/game/monthschedule?yearMonth=${params}`
     );
 
     if (!res.ok) {
@@ -19,7 +19,7 @@ export async function getMonthSchedules(params: string) {
 export async function getAllSchedules(params: string) {
   try {
     const res = await fetch(
-      `/game/allgameschedule?yearMonth=${params}`
+      `/api/game/allgameschedule?yearMonth=${params}`
     );
 
     if (!res.ok) {
@@ -39,7 +39,7 @@ export const fetchBoxscore = async (gameDate?: number, gmkey?: string) => {
     const queryparams =
       gameDate && gmkey ? `?gameDate=${gameDate}&gmkey=${gmkey}` : "";
 
-    const URL = `/game/boxscore${queryparams}`;
+    const URL = `/api/game/boxscore${queryparams}`;
 
     const response = await fetch(URL);
 

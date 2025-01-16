@@ -2,7 +2,7 @@ import { CoachDetailResponse, CoachResponse, PitcherResponse } from "./types";
 
 // player - 코치 리스트
 export const getCoachList = async (): Promise<CoachInfo[]> => {
-  const url = `/player/coachlist`;
+  const url = `/api/player/coachlist`;
   const res = await fetch(url);
 
   if (!res.ok) {
@@ -15,7 +15,7 @@ export const getCoachList = async (): Promise<CoachInfo[]> => {
 
 // player - 투수 리스트
 export const getPitcherList = async (): Promise<PitcherInfo[]> => {
-  const url = `/player/pitcherlist`;
+  const url = `/api/player/pitcherlist`;
   const res = await fetch(url, { method: "GET" });
   if (!res.ok) {
     throw new Error("Failed to fetch coach list");
@@ -30,7 +30,7 @@ export const getCoachDetail = async (
   pcode: string
 ): Promise<CoachDetailResponse["data"]> => {
   const queryparam = pcode ? `coachdetail?pcode=${pcode}` : "";
-  const url = ` /player/${queryparam}`;
+  const url = `/api/player/${queryparam}`;
   const response = await fetch(url, { method: "GET" });
 
   if (!response.ok) {

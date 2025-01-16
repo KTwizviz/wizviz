@@ -2,7 +2,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui";
 import KakaoMap from "@/components/common/Map";
 import { Bus, ExternalLink, Map, MapPin, MoveRight, Train } from "lucide-react";
 import Link from "next/link";
-import Script from "next/script";
 import { SUWON_LOCATION } from "@/constants/stadium";
 
 export default function page() {
@@ -10,10 +9,6 @@ export default function page() {
 
   return (
     <div>
-      <Script
-        strategy="beforeInteractive"
-        src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_KAKAO_API_KEY}&libraries=services&autoload=false`}
-      />
       <CardHeader>
         <CardTitle className="flex items-center">
           <Map className="mr-2" />

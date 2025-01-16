@@ -38,7 +38,6 @@ export { default as CarouselImage7 } from "./photos07.jpg";
 export { default as CarouselImage8 } from "./photos08.jpg";
 export { default as CarouselImage9 } from "./photos09.jpg";
 export { default as CarouselImage10 } from "./photos10.jpg";
-
 export { default as Parking_img } from "./parking_img.png";
 export { default as policy_img } from "./policy_img.jpg";
 export { default as Sponsor_bccard_img } from "./sponsor_bccard.gif";
@@ -66,6 +65,10 @@ export { default as iksan_stadium6 } from "./iksan_stadium6.png";
 export { default as iksan_stadium7 } from "./iksan_stadium7.png";
 export { default as iksan_stadium8 } from "./iksan_stadium8.png";
 export { default as iksan_stadium9 } from "./iksan_stadium9.png";
+export { default as bi_Image_symbol_black } from "./bi_Image_symbol_black.png";
+export { default as bi_Image_symbol_white } from "./bi_Image_symbol_white.png";
+export { default as bi_Initial_symbol_white } from "./bi_Initial_symbol_white.png";
+export { default as bi_Initial_symbol_black } from "./bi_Initial_symbol_black.png";
 export { default as ranking_score } from "./ranking_score.png";
 export { default as parking_banner } from "./parking_banner.png";
 export { default as wallpaper_img } from "./wallpaper_img.png";

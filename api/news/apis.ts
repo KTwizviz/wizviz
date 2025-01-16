@@ -4,8 +4,8 @@ const BASE_URL = process.env.NEXT_PUBLIC_API_KEY;
 export const getNewsDetail = async (
   artcSeq: string
 ): Promise<ArticleContentsResponse["data"]> => {
-  //   const queryparam = artcSeq ? `newsdetail?artcSeq=${artcSeq}` : "";
-  const queryparam = artcSeq ? `newsdetail?artcSeq=190049` : ""; //예시
+  const queryparam = artcSeq ? `newsdetail?artcSeq=${artcSeq}` : "";
+
   const url = `${BASE_URL}/article/${queryparam}`;
   const res = await fetch(url);
 
@@ -14,6 +14,5 @@ export const getNewsDetail = async (
   }
 
   const response: ArticleContentsResponse = await res.json();
-  console.log(response.data.article, "나 아티클 리스펀스");
   return response.data;
 };

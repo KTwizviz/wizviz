@@ -3,7 +3,6 @@ import Image from "next/image";
 import { main_title_video } from "@/assets/images/@index";
 import VideoCard from "./video-card";
 import { HIGHLIGHT_VIDEO } from "@/constants/main";
-import { Button } from "../ui";
 import { useState } from "react";
 
 const Video = () => {
@@ -48,16 +47,6 @@ const Video = () => {
           />
         ))}
       </div>
-      <Button
-        variant="outline"
-        size="lg"
-        className="text-xl px-24 py-7 border-ELSE-34"
-        onClick={() => {
-          console.log("더 많은 영상보기 이동");
-        }}
-      >
-        더 많은 영상보기
-      </Button>
     </div>
   );
 };

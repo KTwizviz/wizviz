@@ -1,11 +1,11 @@
-import { CoachResponse, PitcherResponse } from "./types";
+import { CoachDetailResponse, CoachResponse, PitcherResponse } from "./types";
 
 const BASE_URL = process.env.NEXT_PUBLIC_API_KEY;
 
-// api/player/coachlist
+// player - 코치 리스트
 export const getCoachList = async (): Promise<CoachInfo[]> => {
   const url = `${BASE_URL}/player/coachlist`;
-  const res = await fetch(url, { method: "GET" });
+  const res = await fetch(url);
 
   if (!res.ok) {
     throw new Error("Failed to fetch coach list");
@@ -15,7 +15,7 @@ export const getCoachList = async (): Promise<CoachInfo[]> => {
   return response.data.list; // list 반환
 };
 
-// api/player/pitcherlist
+// player - 투수 리스트
 export const getPitcherList = async (): Promise<PitcherInfo[]> => {
   const url = `${BASE_URL}/player/pitcherlist`;
   const res = await fetch(url, { method: "GET" });
@@ -25,4 +25,20 @@ export const getPitcherList = async (): Promise<PitcherInfo[]> => {
 
   const response: PitcherResponse = await res.json();
   return response;
+};
+
+// player - 코치 디테일
+export const getCoachDetail = async (
+  pcode: string
+): Promise<CoachDetailResponse["data"]> => {
+  const queryparam = pcode ? `coachdetail?pcode=${pcode}` : "";
+  const url = `${BASE_URL}/player/${queryparam}`;
+  const response = await fetch(url, { method: "GET" });
+
+  if (!response.ok) {
+    throw new Error("Network response was not ok");
+  }
+
+  const data = await response.json();
+  return data.data;
 };

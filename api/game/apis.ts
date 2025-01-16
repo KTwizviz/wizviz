@@ -1,10 +1,6 @@
-const BASE_URL = process.env.NEXT_PUBLIC_API_KEY;
-
 export async function getMonthSchedules(params: string) {
   try {
-    const res = await fetch(
-      `${BASE_URL}/game/monthschedule?yearMonth=${params}`
-    );
+    const res = await fetch(`/api/game/monthschedule?yearMonth=${params}`);
 
     if (!res.ok) {
       throw new Error("네트워크 문제 발생");
@@ -20,9 +16,7 @@ export async function getMonthSchedules(params: string) {
 
 export async function getAllSchedules(params: string) {
   try {
-    const res = await fetch(
-      `${BASE_URL}/game/allgameschedule?yearMonth=${params}`
-    );
+    const res = await fetch(`/api/game/allgameschedule?yearMonth=${params}`);
 
     if (!res.ok) {
       throw new Error("네트워크 문제 발생");
@@ -36,12 +30,11 @@ export async function getAllSchedules(params: string) {
   }
 }
 
-export const fetchBoxscore = async (gameDate?: number, gmkey?: string) => {
+export const getBoxscore = async (
+  queryparams: string
+): Promise<GetBoxscore> => {
   try {
-    const queryparams =
-      gameDate && gmkey ? `?gameDate=${gameDate}&gmkey=${gmkey}` : "";
-
-    const URL = `${BASE_URL}/game/boxscore${queryparams}`;
+    const URL = `/api/game/boxscore${queryparams}`;
 
     const response = await fetch(URL);
 

@@ -31,3 +31,14 @@ export type CoachDetailResponse = {
     };
   };
 };
+
+export type PitcherDetailResponse = {
+  data: {
+    gameplayer: PitcherPersonalInfo;
+    recentgamerecordlist: PitcherGameRecord[];
+    recentgamerecordlistfutures: PitcherGameRecord[];
+    seasonsummary: PitcherSeasonSummary;
+    seasonsummaryfutures: PitcherSeasonSummary;
+    yearrecordlist: PitcherYearRecord[];
+  };
+};

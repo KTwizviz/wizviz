@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { symbolData } from "@/constants/bi-symbolData";
+import { symbolData } from "@/constants/bi-data";
 
 export const Bi_Symbol_items = () => {
   return (

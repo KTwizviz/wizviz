@@ -1,5 +1,5 @@
 import { getCoachDetail } from "@/api/player/apis";
-import { CoachDetail } from "@/components/player/coach-detail";
+import { CoachDetail } from "@/components/player/coach/coach-detail";
 
 export default async function Page({
   params,

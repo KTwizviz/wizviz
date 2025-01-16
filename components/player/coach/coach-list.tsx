@@ -1,4 +1,4 @@
-import PlayerCard from "./player-card";
+import PlayerCard from "../player-card";
 
 export function CoachList({ data }: CoachListProps) {
   return (
@@ -10,6 +10,7 @@ export function CoachList({ data }: CoachListProps) {
           image={coach.mobilePlayerImg1}
           name={coach.playerName}
           backnum={parseInt(coach.backnum)}
+          pathname="coach"
         />
       ))}
     </div>

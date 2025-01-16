@@ -19,7 +19,7 @@ const Parking = () => {
         }}
       />
       <div className="absolute w-[540px] h-[190px] inset-0 px-10 pt-4 flex flex-col justify-center mr-10">
-        <p className="text-l text-red-500 font-medium mb-2">
+        <p className="text-l text-SYSTEM-main font-medium mb-2">
           수원 케이터 워즈 파크
         </p>
         <h1 className="text-2xl font-medium mb-6">사전 주차 예약제 안내</h1>

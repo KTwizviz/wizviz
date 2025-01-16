@@ -8,9 +8,10 @@ export default function page() {
         <p className="text-3xl">심볼마크</p>
       </div>
       <p className="py-6">
-        kt wiz는 구단명의 이니셜을 상징화한 '이니셜 심볼'과
+        kt wiz는 구단명의 이니셜을 상징화한 &apos;이니셜 심볼&apos;과
         <br />
-        그림을 정상화한 '이미지 심볼' 두 개의 심볼마크를 동시에 사용합니다.
+        그림을 정상화한 &apos;이미지 심볼&apos; 두 개의 심볼마크를 동시에
+        사용합니다.
       </p>
 
       <div className="pb-10">
@@ -19,9 +20,7 @@ export default function page() {
           height="450"
           src="https://www.youtube.com/embed/LR0BPPUXzsc"
           title="kt wiz 심볼 탄생 스토리"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
+          allow="fullscreen"
         ></iframe>
       </div>
       <Bi_Symbol_items />

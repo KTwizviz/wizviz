@@ -36,7 +36,9 @@ export async function getAllSchedules(params: string) {
   }
 }
 
-export const getBoxscore = async (queryparams: string): Promise<GetBoxscore> => {
+export const getBoxscore = async (
+  queryparams: string
+): Promise<GetBoxscore> => {
   try {
     const URL = `${BASE_URL}/game/boxscore${queryparams}`;
 

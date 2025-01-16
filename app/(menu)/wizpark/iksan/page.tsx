@@ -7,7 +7,6 @@ import { BusRouteInfo } from "@/components/wizpark/iksan/bus-route-info";
 import { IKSAN_IMAGES, IKSAN_LOCATION } from "@/constants/stadium";
 import { Bus, ExternalLink, Images, Map, MapPin } from "lucide-react";
 import Link from "next/link";
-import Script from "next/script";
 
 export default function page() {
   return (
@@ -32,10 +31,6 @@ export default function page() {
           </div>
         </CardContent>
       </Card>
-      <Script
-        strategy="beforeInteractive"
-        src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_KAKAO_API_KEY}&libraries=services&autoload=false`}
-      />
       <CardHeader>
         <CardTitle className="flex items-center">
           <Map className="mr-2" />

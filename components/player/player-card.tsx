@@ -2,11 +2,17 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-const PlayerCard = ({ image, name, backnum, pcode }: CoachCardProps) => {
+const PlayerCard = ({
+  image,
+  name,
+  backnum,
+  pcode,
+  pathname,
+}: CoachCardProps) => {
   const router = useRouter();
 
   const handleClick = () => {
-    router.push(`/player/coach/${pcode}`); // 코치 상세 페이지로 이동
+    router.push(`/player/${pathname}/${pcode}`);
   };
   return (
     <div

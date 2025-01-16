@@ -4,11 +4,7 @@ export const getKtwizRank = async (): Promise<GetKtwizRank> => {
   try {
     const URL = `${BASE_URL}/game/ktwizteamrank`;
 
-    const response = await fetch(URL, {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const response = await fetch(URL);
 
     if (!response.ok) {
       throw new Error("Network response was not ok");

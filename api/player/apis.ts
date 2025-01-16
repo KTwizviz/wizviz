@@ -51,7 +51,7 @@ export const getPitcherDetail = async (
   pcode: string
 ): Promise<PitcherDetailResponse["data"]> => {
   const queryparam = pcode ? `pitcherdetail?pcode=${pcode}` : "";
-  const url = `${BASE_URL}/player/${queryparam}`;
+  const url = `/api/player/${queryparam}`;
   const response = await fetch(url, { method: "GET" });
 
   if (!response.ok) {
